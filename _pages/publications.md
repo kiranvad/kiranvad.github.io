@@ -5,6 +5,8 @@ permalink: /publications/
 author_profile: true
 ---
 
+These are select publications from each year. You may find the full list on [Google Scholar](https://scholar.google.com/citations?user=GbNEbEkAAAAJ&hl=en)
+
 ## 2022
 * [Metric geometry tools for automatic structure phase map generation](https://doi.org/10.26434/chemrxiv-2022-3p4gx), ChemrXiv, pre-print (2022) **Vaddi, Kiran**, Karen Li, and Lilo D. Pozzo. 
 
