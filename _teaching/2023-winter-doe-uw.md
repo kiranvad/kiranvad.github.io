@@ -4,7 +4,7 @@ collection: teaching
 type: ""
 permalink: /teaching/2023-winter-doe-uw
 venue: "University of Washington, Chemical Engineering"
-date: 2023
+date: 2023-01-01
 location: "Seattle, USA"
 ---
 
