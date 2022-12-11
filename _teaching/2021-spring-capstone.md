@@ -4,7 +4,7 @@ collection: teaching
 type: "DIRECT Capstone UW"
 permalink: /teaching/2021-spring-capstone-uw
 venue: "University of Washington, Chemical Engineering"
-date: 2014-01-01
+date: 2021
 location: "Seattle, USA"
 ---
 
