@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Welcome to the home page of Kiran Vaddi"
+title: "Kiran Vaddi, Ph.D."
 excerpt: "A postdoctoral researcher at UW Seattle"
 author_profile: true
 redirect_from: 
