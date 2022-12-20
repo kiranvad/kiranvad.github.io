@@ -15,10 +15,10 @@ I will teaching a new course on Design of Experiments in the Department of Chemi
 
 | Date | Title|  Lecture notes |
 | --------|------ | ------------------------------------------------------------ |
-| Jan 04, Wed    | Introduction and course logistics   | [Lecture 1](http://kiranvad.github.io/files/teaching/DOE/lec01/pdf)|
-| Jan 06, Fri    | Basics : Distributions, Statistics and Probability   | [Lecture 2](http://kiranvad.github.io/files/teaching/DOE/lec02/pdf)|
-| Jan 09, Mon    | Basics : The Normal distribution   | [Lecture 3](http://kiranvad.github.io/files/teaching/DOE/lec03/pdf)|
-| Jan 11, Wed    | Basics : Randomness and random variables   | [Lecture 4](http://kiranvad.github.io/files/teaching/DOE/lec04/pdf)|
+| Jan 04, Wed    | Introduction and course logistics   | [Lecture 1](http://kiranvad.github.io/files/teaching/DOE/lec01.pdf)|
+| Jan 06, Fri    | Basics : Distributions, Statistics and Probability   | [Lecture 2](http://kiranvad.github.io/files/teaching/DOE/lec02.pdf)|
+| Jan 09, Mon    | Basics : The Normal distribution   | [Lecture 3](http://kiranvad.github.io/files/teaching/DOE/lec03.pdf)|
+| Jan 11, Wed    | Basics : Randomness and random variables   | [Lecture 4](http://kiranvad.github.io/files/teaching/DOE/lec04.pdf)|
 | Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](#)|
 | Jan 18, Wed    | Randomization for inference : students t-test   | [Lecture 6](#)|
 | Jan 23, Mon    | Randomization for inference : students paired t-test   | [Lecture 7](#)|
