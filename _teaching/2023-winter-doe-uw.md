@@ -1,5 +1,5 @@
 ---
-title: "Design of Experiments (CHEME 599)"
+title: "Design of Experiments (CHEME B 599)"
 collection: teaching
 type: "Graduate level course"
 permalink: /teaching/2023-winter-doe-uw
@@ -9,7 +9,9 @@ location: "Seattle, USA"
 ---
 
 
-I will teaching a new course on Design of Experiments in the Department of Chemical Engineering in the winter quarter. A tentative course description can be found [here](http://kiranvad.github.io/files/teaching/DOE/course_description.pdf). 
+I will be teaching a new course on Design of Experiments in the Department of Chemical Engineering in the winter quarter. 
+
+A tentative course description can be found [here](http://kiranvad.github.io/files/teaching/DOE/course_description.pdf). 
 
 ### Schedule
 
@@ -19,9 +21,9 @@ I will teaching a new course on Design of Experiments in the Department of Chemi
 | Jan 06, Fri    | Basics : Distributions, Statistics and Probability   | [Lecture 2](http://kiranvad.github.io/files/teaching/DOE/lec02.pdf)|
 | Jan 09, Mon    | Basics : The Normal distribution   | [Lecture 3](http://kiranvad.github.io/files/teaching/DOE/lec03.pdf)|
 | Jan 11, Wed    | Basics : Randomness and random variables   | [Lecture 4](http://kiranvad.github.io/files/teaching/DOE/lec04.pdf)|
-| Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](#)|
-| Jan 18, Wed    | Randomization for inference : students t-test   | [Lecture 6](#)|
-| Jan 23, Mon    | Randomization for inference : students paired t-test   | [Lecture 7](#)|
+| Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](http://kiranvad.github.io/files/teaching/DOE/lec04.pdf)|
+| Jan 18, Wed    | Randomization and design (Continued)   | |
+| Jan 23, Mon    | Randomization for inference : students t-test and paired t-test   | [Lecture 7](#)|
 | Jan 25, Wed    | Completely Random Design : Models and parameters   | [Lecture 8](#)|
 | Jan 27, Fri    | Comapring models :  The Analysis of Variance (ANOVA) (Part 1)   | [Lecture 9](#)|
 | Jan 30, Mon    | Comapring models :  The Analysis of Variance (ANOVA) (Part 2)   | [Lecture 10](#)|
