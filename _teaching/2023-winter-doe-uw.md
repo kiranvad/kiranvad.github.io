@@ -23,20 +23,20 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Jan 11, Wed    | Basics : Randomness and random variables   | [Lecture 4](http://kiranvad.github.io/files/teaching/DOE/lec04.pdf)|
 | Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](http://kiranvad.github.io/files/teaching/DOE/lec05.pdf)|
 | Jan 18, Wed    | Randomization and design (Continued)   | |
-| Jan 23, Mon    | Randomization for inference : students paired t-test   | [Lecture 7](#)|
-| Jan 25, Wed    | Comapring models :  The Analysis of Variance (ANOVA) (Part 1)| [Lecture 8](#)|
-| Jan 27, Fri    | Comapring models :  The Analysis of Variance (ANOVA) (Part 2)   | [Lecture 9](#)|
-| Jan 30, Mon    | The factorial design in experimentation   | [Lecture 10](#)|
-| Feb 01, Wed    | Sobol indices and the measure of sensitivity| [Lecture 11](#)|
-| Feb 03, Fri    | Measures of information : Ideas of Claude E Shanon   | [Lecture 12](#)|
-| Feb 08, Wed    | The space filling design   | [Lecture 13](#)|
-| Feb 10, Fri    | Criteria-based design   | [Lecture 14](#)|
-| Feb 13, Mon    | Exploratory data analysis : PCA, Clustering   | [Lecture 15](#)|
-| Feb 15, Wed    | Modelling : Selection, fitting, and validation (Part 1)   | [Lecture 16](#)|
-| Feb 17, Fri    | Modelling : Selection, fitting, and validation (Part 2)   | [Lecture 17](#)|
-| Feb 22, Wed    | The sequential design method for modelling (Part 1)   | [Lecture 18](#)|
-| Feb 24, Fri    | The sequential design method for modelling (Part 2)   | [Lecture 19](#)|
-| Feb 27, Mon    | Example case study using Active Learning   | [Lecture 20](#)|
-| Mar 01, Wed    | Optimization : Introduction to Bayesian optimization   | [Lecture 21](#)|
-| Mar 03, Fri    | Optimization : Example case studies of Bayesian optimization   | [Lecture 22](#)|
+| Jan 23, Mon    | Randomization for inference : students paired t-test   | |
+| Jan 25, Wed    | Comapring models :  The Analysis of Variance (ANOVA) (Part 1)| |
+| Jan 27, Fri    | Comapring models :  The Analysis of Variance (ANOVA) (Part 2)   | |
+| Jan 30, Mon    | The factorial design in experimentation   | |
+| Feb 01, Wed    | Sobol indices and the measure of sensitivity| |
+| Feb 03, Fri    | Measures of information : Ideas of Claude E Shanon   | |
+| Feb 08, Wed    | The space filling design   | |
+| Feb 10, Fri    | Criteria-based design   | |
+| Feb 13, Mon    | Exploratory data analysis : PCA, Clustering   | [Lecture 15](http://kiranvad.github.io/files/teaching/DOE/lec15.pdf)|
+| Feb 15, Wed    | Modelling : Selection, fitting, and validation (Part 1)   |[Lecture 16](http://kiranvad.github.io/files/teaching/DOE/lec16.pdf) |
+| Feb 17, Fri    | Modelling : Selection, fitting, and validation (Part 2)   | |
+| Feb 22, Wed    | The sequential design method for modelling (Part 1)   | |
+| Feb 24, Fri    | The sequential design method for modelling (Part 2)   | |
+| Feb 27, Mon    | Example case study using Active Learning   | |
+| Mar 01, Wed    | Optimization : Introduction to Bayesian optimization   | |
+| Mar 03, Fri    | Optimization : Example case studies of Bayesian optimization   ||
 
