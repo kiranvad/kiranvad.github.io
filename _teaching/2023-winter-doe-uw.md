@@ -19,7 +19,7 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | --------|------ | ------------------------------------------------------------ |
 | Jan 04, Wed    | Introduction and course logistics   | [Lecture 1](http://kiranvad.github.io/files/teaching/DOE/lec01.pdf)|
 | Jan 06, Fri    | Basics : Distributions, Statistics and Probability   | [Lecture 2](http://kiranvad.github.io/files/teaching/DOE/lec02.pdf)|
-| Jan 09, Mon    | Basics : The Normal distribution   | [Lecture 3](http://kiranvad.github.io/files/teaching/DOE/lec03.pdf)|
+| Jan 09, Mon    | Basics : The Normal distribution   | [Lecture 3](http://kiranvad.github.io/files/teaching/DOE/lec03.pdf) [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2003.ipynb)|
 | Jan 11, Wed    | Basics : Randomness and random variables   | [Lecture 4](http://kiranvad.github.io/files/teaching/DOE/lec04.pdf)|
 | Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](http://kiranvad.github.io/files/teaching/DOE/lec05.pdf)|
 | Jan 18, Wed    | Randomization and design (Continued)   | |
