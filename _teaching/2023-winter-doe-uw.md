@@ -40,3 +40,7 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Mar 01, Wed    | Optimization : Introduction to Bayesian optimization   | |
 | Mar 03, Fri    | Optimization : Example case studies of Bayesian optimization   ||
 
+## Assignments
+
+[Assignment 1](http://kiranvad.github.io/files/teaching/DOE/asg01.pdf)
+
