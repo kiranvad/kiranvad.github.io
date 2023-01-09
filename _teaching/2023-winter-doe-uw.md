@@ -42,5 +42,5 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 
 ## Assignments
 
-[Assignment 1](http://kiranvad.github.io/files/teaching/DOE/asg01.pdf)
+[Assignment 1](http://kiranvad.github.io/files/teaching/DOE/asg01.pdf) due on 23rd January, 2023 by 11:59 PM
 
