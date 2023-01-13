@@ -33,7 +33,7 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Feb 10, Fri    | Criteria-based design   | | |
 | Feb 13, Mon    | Exploratory data analysis : PCA, Clustering   | [Lecture 15](http://kiranvad.github.io/files/teaching/DOE/lec15.pdf)| |
 | Feb 15, Wed    | Modelling : Selection, fitting, and validation (Part 1)   |[Lecture 16](http://kiranvad.github.io/files/teaching/DOE/lec16.pdf) | |
-| Feb 17, Fri    | Modelling : Selection, fitting, and validation (Part 2)   | | |
+| Feb 17, Fri    | Modelling : Selection, fitting, and validation (Part 2)   |[Lecture 16](http://kiranvad.github.io/files/teaching/DOE/lec17.pdf) | |
 | Feb 22, Wed    | The sequential design method for modelling (Part 1)   | | |
 | Feb 24, Fri    | The sequential design method for modelling (Part 2)   | | |
 | Feb 27, Mon    | Example case study using Active Learning   | | |
