@@ -17,11 +17,11 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 
 | Date | Title|  Lecture notes | Others |
 | --------|------ | ------------------------------------------------------------ |
-| Jan 04, Wed    | Introduction and course logistics   | [Lecture 1](http://kiranvad.github.io/files/teaching/DOE/lec01.pdf)| [in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec 01.pdf) |
+| Jan 04, Wed    | Introduction and course logistics   | [Lecture 1](http://kiranvad.github.io/files/teaching/DOE/lec01.pdf)| [in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec01.pdf) |
 | Jan 06, Fri    | Basics : Distributions, Statistics and Probability   | [Lecture 2](http://kiranvad.github.io/files/teaching/DOE/lec02.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec02.pdf) |
-| Jan 09, Mon    | Basics : The Normal distribution   | [Lecture 3](http://kiranvad.github.io/files/teaching/DOE/lec03.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec03.pdf) [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2003.ipynb)|
+| Jan 09, Mon    | Basics : The Normal distribution   | [Lecture 3](http://kiranvad.github.io/files/teaching/DOE/lec03.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec03.pdf)   [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2003.ipynb)|
 | Jan 11, Wed    | Basics : Randomness and random variables   | [Lecture 4](http://kiranvad.github.io/files/teaching/DOE/lec04.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec04.pdf) |
-| Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](http://kiranvad.github.io/files/teaching/DOE/lec05.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec05.pdf)[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2005.ipynb) |
+| Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](http://kiranvad.github.io/files/teaching/DOE/lec05.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec05.pdf)   [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2005.ipynb) |
 | Jan 18, Wed    | Randomization and design (Continued)   | | |
 | Jan 23, Mon    | Randomization for inference : students paired t-test   | | |
 | Jan 25, Wed    | Comapring models :  The Analysis of Variance (ANOVA) (Part 1)| | |
