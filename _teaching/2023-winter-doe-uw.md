@@ -23,7 +23,7 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Jan 11, Wed    | Basics : Randomness and random variables   | [Lecture 4](http://kiranvad.github.io/files/teaching/DOE/lec04.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec04.pdf) |
 | Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](http://kiranvad.github.io/files/teaching/DOE/lec05.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec05.pdf)   [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2005.ipynb) |
 | Jan 18, Wed    | Randomization and design (Continued)   | |[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec06.pdf) |
-| Jan 23, Mon    | Randomization for inference : students paired t-test   | | |
+| Jan 23, Mon    | Randomization for inference : students paired t-test   |[Lecture 7](http://kiranvad.github.io/files/teaching/DOE/lec07.pdf) | |
 | Jan 25, Wed    | Comapring models :  The Analysis of Variance (ANOVA) (Part 1)| | |
 | Jan 27, Fri    | Comapring models :  The Analysis of Variance (ANOVA) (Part 2)   | | |
 | Jan 30, Mon    | The factorial design in experimentation   | | |
