@@ -16,7 +16,7 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 ### Schedule
 
 | Date | Title|  Lecture notes | Others | Further reading | 
-| -----------|------------------------------------------- | ------------- |--------------|----------------------------------------------------------------------|
+| ------------------------|--------------------------------------------------------- | ------------- |--------------|----------------------------------------------------------------------|
 | Jan 04, Wed    | Introduction and course logistics   | [Lecture 1](http://kiranvad.github.io/files/teaching/DOE/lec01.pdf)| [in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec01.pdf) |
 | Jan 06, Fri    | Basics : Distributions, Statistics and Probability   | [Lecture 2](http://kiranvad.github.io/files/teaching/DOE/lec02.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec02.pdf) |
 | Jan 09, Mon    | Basics : The Normal distribution   | [Lecture 3](http://kiranvad.github.io/files/teaching/DOE/lec03.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec03.pdf)   [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2003.ipynb)|
