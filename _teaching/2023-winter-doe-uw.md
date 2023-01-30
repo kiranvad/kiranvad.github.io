@@ -24,22 +24,21 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Jan 13, Fri    | Randomization and design : The test of significance and the Null hypothesis | [Lecture 5](http://kiranvad.github.io/files/teaching/DOE/lec05.pdf)|[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec05.pdf)   [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2005.ipynb) |
 | Jan 18, Wed    | Randomization and design (Continued)   | |[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec06.pdf) |
 | Jan 23, Mon    | Randomization for inference : students paired t-test   |[Lecture 7](http://kiranvad.github.io/files/teaching/DOE/lec07.pdf) | |
-| Jan 25, Wed    | Comapring models :  The Analysis of Variance (ANOVA) (Part 1)|[Lecture 8](http://kiranvad.github.io/files/teaching/DOE/lec08.pdf) | |
-| Jan 27, Fri    | Comapring models :  The Analysis of Variance (ANOVA) (Part 2)   | | |
-| Jan 30, Mon    | The factorial design in experimentation   | | |
-| Feb 01, Wed    | Sobol indices and the measure of sensitivity| | |
+| Jan 25, Wed    | Comapring models :  The Analysis of Variance (ANOVA)|[Lecture 8](http://kiranvad.github.io/files/teaching/DOE/lec08.pdf) | |
+| Jan 27, Fri    | ANOVA example and the factorial design in expeimenation|[Lecture 9](http://kiranvad.github.io/files/teaching/DOE/lec09.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2009.ipynb)|
+| Jan 30, Mon    | The space filling design   | |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2010.ipynb) |
+| Feb 01, Wed    | Criteria-based design | | |
 | Feb 03, Fri    | Measures of information : Ideas of Claude E Shanon   | | |
-| Feb 08, Wed    | The space filling design   | | |
-| Feb 10, Fri    | Criteria-based design   | | |
-| Feb 13, Mon    | Exploratory data analysis : PCA, Clustering   | [Lecture 15](http://kiranvad.github.io/files/teaching/DOE/lec15.pdf)| |
-| Feb 15, Wed    | Modelling : Selection, fitting, and validation    |[Lecture 16](http://kiranvad.github.io/files/teaching/DOE/lec16.pdf) | |
-| Feb 17, Fri    | Modelling : Gaussian Processes   |[Lecture 17](http://kiranvad.github.io/files/teaching/DOE/lec17.pdf) | |
-| Feb 22, Wed    | Modelling : Gaussian processes and BART (continued)   | | |
-| Feb 24, Fri    | The sequential design method for modelling|[Lecture 18](http://kiranvad.github.io/files/teaching/DOE/lec18.pdf) | |
-| Feb 27, Mon    | Example case study using Active Learning   | | |
-| Mar 01, Wed    | Optimization : Introduction to Bayesian optimization   | | |
-| Mar 03, Fri    | Optimization : Example case studies of Bayesian optimization   | | |
-
+| Feb 08, Wed    | Exploratory data analysis : PCA, Clustering    |[Lecture 15](http://kiranvad.github.io/files/teaching/DOE/lec15.pdf) | |
+| Feb 10, Fri    | Modelling : Selection, fitting, and validation |[Lecture 16](http://kiranvad.github.io/files/teaching/DOE/lec16.pdf)  | |
+| Feb 13, Mon    | Modelling : Gaussian Processes   |[Lecture 17](http://kiranvad.github.io/files/teaching/DOE/lec17.pdf) | |
+| Feb 15, Wed    | Modelling : Gaussian processes and BART (continued)   | | |
+| Feb 17, Fri    | The sequential design method for modelling|[Lecture 18](http://kiranvad.github.io/files/teaching/DOE/lec18.pdf) | |
+| Feb 22, Wed    | Real word examples of using Active Learning in Materials design and discovery  | | |
+| Feb 24, Fri    | Optimization : Introduction to Bayesian optimization   | | |
+| Feb 27, Mon    | Optimization : Real word examples of Bayesian optimization | | |
+| Mar 01, Wed    | Rienforcement Learning and Quality diversity examples | | |
+| Mar 03, Fri    | Summary of the course and Discussion on final project | | |
 ## Assignments
 
 1. [Assignment 1](http://kiranvad.github.io/files/teaching/DOE/asg01.pdf) due on 23rd January, 2023 by 11:59 PM
