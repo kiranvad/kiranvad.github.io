@@ -26,7 +26,7 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Jan 23, Mon    | Randomization for inference : students paired t-test   |[Lecture 7](http://kiranvad.github.io/files/teaching/DOE/lec07.pdf) | |
 | Jan 25, Wed    | Comapring models :  The Analysis of Variance (ANOVA)|[Lecture 8](http://kiranvad.github.io/files/teaching/DOE/lec08.pdf) | | Chapter 3.5, 3.6, 3.7 from A First Course in Design and Analysis of Experiments by Gary W. Oehlert |
 | Jan 27, Fri    | ANOVA example and the factorial design in expeimenation|[Lecture 9](http://kiranvad.github.io/files/teaching/DOE/lec09.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2009.ipynb)|
-| Jan 30, Mon    | The space filling design   | |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2010.ipynb) |
+| Jan 30, Mon    | The space filling design   |[Lecture 10](http://kiranvad.github.io/files/teaching/DOE/lec10.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2010.ipynb) |
 | Feb 01, Wed    | Criteria-based design | | |
 | Feb 03, Fri    | Measures of information : Ideas of Claude E Shanon   | | |
 | Feb 08, Wed    | Exploratory data analysis : PCA, Clustering    |[Lecture 15](http://kiranvad.github.io/files/teaching/DOE/lec15.pdf) | |
