@@ -27,7 +27,7 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Jan 25, Wed    | Comapring models :  The Analysis of Variance (ANOVA)|[Lecture 8](http://kiranvad.github.io/files/teaching/DOE/lec08.pdf) | | Chapter 3.5, 3.6, 3.7 from A First Course in Design and Analysis of Experiments by Gary W. Oehlert |
 | Jan 27, Fri    | ANOVA example and the factorial design in expeimenation|[Lecture 9](http://kiranvad.github.io/files/teaching/DOE/lec09.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2009.ipynb)|
 | Jan 30, Mon    | The space filling design   |[Lecture 10](http://kiranvad.github.io/files/teaching/DOE/lec10.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2010.ipynb) |
-| Feb 01, Wed    | Measures of information : Ideas of Claude E Shanon   | | |
+| Feb 01, Wed    | Measures of information : Ideas of Claude E Shanon   |[Lecture 11](http://kiranvad.github.io/files/teaching/DOE/lec10.pdf) | | https://youtu.be/v68zYyaEmEA , The Idea Factory by Joe Gartner: Chapter 7, 8 |
 | Feb 03, Fri    | Criteria-based design  | | |
 | Feb 08, Wed    | Exploratory data analysis : PCA, Clustering    |[Lecture 15](http://kiranvad.github.io/files/teaching/DOE/lec15.pdf) | |
 | Feb 10, Fri    | Modelling : Selection, fitting, and validation |[Lecture 16](http://kiranvad.github.io/files/teaching/DOE/lec16.pdf)  | |
