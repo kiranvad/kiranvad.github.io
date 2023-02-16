@@ -29,10 +29,10 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Jan 30, Mon    | The space filling design   |[Lecture 10](http://kiranvad.github.io/files/teaching/DOE/lec10.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2010.ipynb) |
 | Feb 01, Wed    | Measures of information : Ideas of Claude E Shanon   |[Lecture 11](http://kiranvad.github.io/files/teaching/DOE/lec11.pdf) | | [Wordle example](https://youtu.be/v68zYyaEmEA) , The Idea Factory by Joe Gartner: Chapter 7, 8 |
 | Feb 03, Fri    | Criteria-based design  |[Lecture 12](http://kiranvad.github.io/files/teaching/DOE/lec12.pdf) |[dexpy example](https://statease.github.io/dexpy/example-optimal.html) |
-| Feb 08, Wed    | Exploratory data analysis : PCA, Clustering    |[Lecture 15](http://kiranvad.github.io/files/teaching/DOE/lec15.pdf) |[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec13.pdf) [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2015.ipynb) |
-| Feb 10, Fri    | Modelling : Selection, fitting, and validation |[Lecture 16](http://kiranvad.github.io/files/teaching/DOE/lec16.pdf)  | |
-| Feb 13, Mon    | Modelling : Gaussian Processes   |[Lecture 17](http://kiranvad.github.io/files/teaching/DOE/lec17.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2017.ipynb) |
-| Feb 15, Wed    | Modelling : Gaussian processes and BART (continued)   | | |
+| Feb 08, Wed    | Exploratory data analysis : PCA, Clustering    |[Lecture 13](http://kiranvad.github.io/files/teaching/DOE/lec15.pdf) |[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec13.pdf) [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2015.ipynb) |
+| Feb 10, Fri    | Modelling : Selection, fitting, and validation |[Lecture 14](http://kiranvad.github.io/files/teaching/DOE/lec16.pdf)  |[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec14.pdf) |
+| Feb 13, Mon    | Modelling : Gaussian Processes   |[Lecture 15](http://kiranvad.github.io/files/teaching/DOE/lec17.pdf) |[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec15.pdf) [code](https://github.com/kiranvad/DOE/blob/master/Lecture%2017.ipynb) |
+| Feb 15, Wed    | Modelling : Gaussian processes and BART (continued)   | |[in class](http://kiranvad.github.io/files/teaching/DOE/handwritten/Lec16.pdf) |
 | Feb 17, Fri    | The sequential design method for modelling|[Lecture 18](http://kiranvad.github.io/files/teaching/DOE/lec18.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2018.ipynb) |
 | Feb 22, Wed    | Real word examples of using Active Learning in Materials design and discovery  | | |
 | Feb 24, Fri    | Optimization : Introduction to Bayesian optimization   | | |
