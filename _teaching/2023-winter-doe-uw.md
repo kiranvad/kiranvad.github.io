@@ -36,7 +36,7 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 | Feb 17, Fri    | The sequential design method for modelling|[Lecture 18](http://kiranvad.github.io/files/teaching/DOE/lec18.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2018.ipynb) |
 | Feb 22, Wed    | Real word examples of using Active Learning in Materials design and discovery  |[Lecture 19](http://kiranvad.github.io/files/teaching/DOE/lec19.pdf) | |
 | Feb 24, Fri    | Optimization : Introduction to Bayesian optimization   |[Notes](https://www.cse.wustl.edu/~garnett/cse515t/spring_2019/files/lecture_notes/12.pdf) from Roman Garnett at WUSTL  | | [Distill article](https://distill.pub/2020/bayesian-optimization/) |
-| Feb 27, Mon    | Examples of Bayesian optimization for materials design and discovery |[Lecture 20](http://kiranvad.github.io/files/teaching/DOE/lec18.pdf) |[code](https://github.com/kiranvad/DOE/blob/master/Lecture%2020.ipynb) | |
+| Feb 27, Mon    | Examples of Bayesian optimization for materials design and discovery |[Lecture 20](http://kiranvad.github.io/files/teaching/DOE/lec20.pdf) | | |
 | Mar 01, Wed    | Rienforcement Learning and Quality diversity examples | | |
 | Mar 03, Fri    | Summary of the course and Discussion on final project | | |
 
