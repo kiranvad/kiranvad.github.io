@@ -45,5 +45,6 @@ A tentative course description can be found [here](http://kiranvad.github.io/fil
 
 1. [Assignment 1](http://kiranvad.github.io/files/teaching/DOE/asg01.pdf) due on 23rd January, 2023 by 11:59 PM
 2. [Assignment 2](https://github.com/kiranvad/DOE/blob/master/Assignment%202.ipynb) due on 24th February, 2023 by 11:59 PM
+3. [Final project](http://kiranvad.github.io/files/teaching/DOE/project.pdf) due on 17th March, 2023 by 11:59 PM
 
 
