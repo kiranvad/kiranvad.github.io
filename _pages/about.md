@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a postdoc scholar in the [Department of Chemical Enginerring](https://www.cheme.washington.edu/) at the University of Washington, Seattle. I am also an affilitate at the [eScience Institute](https://escience.washington.edu/) as a *UW Data Science Postdoctoral Fellow* and Co-chair the weekly postdoc seminar series at the eScience. I am working at the interface of Machine learning and Material Sciences with special focus on the relaization of autnoumous material discovery and design. Previously, I spent five wonderful years at the [Indian Institute of Technlogy Madras](https://www.iitm.ac.in/) and obtained bachelors and masters from the department of Mechanical Engineering. 
+I am a postdoc scholar in the [Department of Chemical Enginerring](https://www.cheme.washington.edu/) at the University of Washington, Seattle. I am also an affilitate at the [eScience Institute](https://escience.washington.edu/) as a *UW Data Science Postdoctoral Fellow* and have Co-chaired the weekly postdoc seminar series at the eScience (2021-2022). I have a Ph.D. in material science and engineering where my focus was on physics-based modeling and data-representations for accelerated material discover. Currenly, as a postdoc, I am working at the interface of Machine learning and Material Sciences with special focus on the relaization of autnoumous material discovery and design. Previously, I spent five wonderful years at the [Indian Institute of Technlogy Madras](https://www.iitm.ac.in/) and obtained bachelors and masters from the department of Mechanical Engineering. 
 
 ## Research Interests
 

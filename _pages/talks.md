@@ -5,15 +5,56 @@ permalink: /talks/
 author_profile: true
 ---
 
-## May 2022
+# Invited Talks
+## 2023
+    - *The Kavli Foundation Frontiers of Materials* \
+        Symposium X - How to Build a Self-Driving Lab 
 
-We have two talks at the upcoming MRS 2022 Spring meeting in Honolulu, Hawaii.
+    - *Materials Research Society* \
+        A Tutorial on Functional Data Analysis for High-Throughput Experiments
+        
+    - *UW Data Science Seminar* \
+        Functional data analysis tools for autonomous experimentation
+        
+    - *American Chemical Society Fall Meeting* \
+        Cold, warm, warmer, hot! Impact of distance metrics on autonomous experimentation
 
-1. **11:00 AM in the DS01**   
-I will be talking about [Autonomous retrosynthesis of nanoscale structure via spectra matching](https://doi.org/10.26434/chemrxiv-2022-dmn8w)   
-(Hawai'i Convention Center, Level 3, Lili'U Theater, 310)  
-This is a joint work with PhD student Huat in the Pozzo group, UW Seattle.
+## 2020        
+    - *IEEE Rochester Section Chapter* \
+        Function Space Data Representation of Temporal Signals for Machine Learning
 
-2. **11:30 AM in DS04**  
-Kacper (PhD Student in the Pozzo group) will be talking about our work on [Multivariate Analysis of Peptide-Driven Nucleation and Growth of Au Nanoparticles](https://doi.org/10.26434/chemrxiv-2022-jnhdn)  
-(Hawai'i Convention Center, Level 3, 313B)  
+
+# Contributed Talks
+
+## 2025
+    - *American Physical Society March Meeting* \
+    - *Materials Research Society Spring Meeting* \
+        Differentiable Phase Mapping for Autonomously Engineering Soft Matter
+
+## 2024
+    - *American Chemical Society Fall Meeting* \
+        Understanding Design Rules of Colloidal Self-Assembly Using Autonomous Phase Mapping
+
+    - *Materials Research Society Spring Meeting* \
+        High-Throughput Structural Investigation of Block Copolymer and Conjugated Polymer Co-Assemblies
+    
+    - *Materials Research Society Spring Meeting* \
+    - *ACS Colloids*
+        Understanding Design Rules of Colloidal Self-Assembly Using Autonomous Phase Mapping 
+
+## 2023 
+    - *American Institute for Chemical Engineers* \
+        Understanding Design Rules of Colloidal Self-Assembly Using Autonomous Phase Mapping
+ 
+    - *Materials Research Society Fall Meeting* \
+        Function Space Representations for Complex Material Workflows
+    
+    - *American Physics Society March Meeting* \
+        Metric geometry tools for automatic structure phase map generation 
+
+## 2022
+    - *Gordon Research Conference on Computational Materials Sciences* \
+        Shape-based data representations for experimental spectra
+
+    - *Materials Research Society Spring Meeting* \
+        Autonomous retrosynthesis of nanoscale structures via spectral shape matching 
