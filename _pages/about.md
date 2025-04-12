@@ -8,11 +8,16 @@ redirect_from:
   - /about.html
 ---
 
-I am a postdoc scholar in the [Department of Chemical Enginerring](https://www.cheme.washington.edu/) at the University of Washington, Seattle. I am also an affilitate at the [eScience Institute](https://escience.washington.edu/) as a *UW Data Science Postdoctoral Fellow* and have Co-chaired the weekly postdoc seminar series at the eScience (2021-2022). I have a Ph.D. in material science and engineering where my focus was on physics-based modeling and data-representations for accelerated material discover. Currenly, as a postdoc, I am working at the interface of Machine learning and Material Sciences with special focus on the relaization of autnoumous material discovery and design. Previously, I spent five wonderful years at the [Indian Institute of Technlogy Madras](https://www.iitm.ac.in/) and obtained bachelors and masters from the department of Mechanical Engineering. 
+I am a Postdoctoral Scholar in the [Department of Chemical Engineering](https://www.cheme.washington.edu/) at the University of Washington, Seattle, and a *UW Data Science Postdoctoral Fellow* affiliated with the [eScience Institute](https://escience.washington.edu/). As part of my involvement with the data science community, I co-chaired the eScience Institute’s weekly postdoc seminar series (2021–2022).
 
-## Research Interests
+My research lies at the intersection of **machine learning** and **materials science**, with a focus on building autonomous experimentation workflows for materials discovery and design. Broadly, I develop models and representations that bridge physical insight and data-driven methods to accelerate the discovery of soft materials and nanostructures. My Ph.D. in Materials Science and Engineering (University at Buffalo, SUNY) focused on developing physics-based and data-driven models for material optimization and structure–property mapping. I received my bachelor’s and master’s degrees in Mechanical Engineering from the [Indian Institute of Technology Madras](https://www.iitm.ac.in/), with a specialization in thermal engineering.
 
-My main research interests are learning representations for data-efficient scientific discovery and understanding of physical phenomenon. Representations play key role in realizing the dream of autonomous experimental design using techniques such as active learning and reinforcement learning. I am interested in developing frameworks to understand materials based on their topology and (differential) geometry that are both computationally tractable and interpretable.
 
-## Others
-I am an ardent cricket fan and spend a lot of my free time watching, analyzing and writing about the beatiful game I've been watching for the better part of 20 years! I also watch a lot of Formula 1 which takes up most of my weekends during the season. I have keen interest in music (composing, production etc.,) and self-taught myself how to play a little bit of keyboard and typically enjoy A.R.Rahman, twenty-one-pilots, and Yanni.
+### Research Interests
+
+My core research interest is in **learning interpretable representations for data-efficient scientific discovery**, especially in settings where experimental data is expensive or sparse. I work on developing differentiable, geometry-inspired models that integrate active learning and reinforcement learning for autonomous experiment design. I am particularly interested in representations grounded in **topology and differential geometry** to make scientific workflows both computationally efficient and physically meaningful.
+
+
+### Beyond Research
+
+Outside the lab, I’m a passionate follower of **cricket** and have been watching, analyzing, and writing about the game for over two decades. I also enjoy **Formula 1**—my weekends are often booked during the race season. I dabble in music production and play a bit of keyboard, with musical tastes ranging from **A. R. Rahman** to **twenty one pilots** and **Yanni**.
