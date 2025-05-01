@@ -22,4 +22,6 @@ My core research interest is in **learning interpretable representations for dat
 
 Outside the lab, I’m a passionate follower of **cricket** and have been watching, analyzing, and writing about the game for over two decades. I also enjoy **Formula 1**—my weekends are often booked during the race season. I dabble in music production and play a bit of keyboard, with musical tastes ranging from **A. R. Rahman** to **twenty one pilots** and **Yanni**.
 
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=3ZOnL29Sti4O_evnKh1zV63d5jP5lqLK-Ikhsjz8ugs&cl=ffffff&w=a"></script>
+<div style="width: 10%; max-width: 100px;">
+  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=3ZOnL29Sti4O_evnKh1zV63d5jP5lqLK-Ikhsjz8ugs&cl=ffffff&w=a"></script>
+</div>

@@ -29,7 +29,8 @@ Contributed Talks
 =====
 
 ### 2025
-* **American Physical Society March Meeting** \
+* **American Physical Society March Meeting** 
+
 * **Materials Research Society Spring Meeting** \
     Differentiable Phase Mapping for Autonomously Engineering Soft Matter
 
@@ -40,7 +41,8 @@ Contributed Talks
 * **Materials Research Society Spring Meeting** \
     High-Throughput Structural Investigation of Block Copolymer and Conjugated Polymer Co-Assemblies
 
-* **Materials Research Society Spring Meeting** \
+* **Materials Research Society Spring Meeting** 
+
 * **ACS Colloids**
     Understanding Design Rules of Colloidal Self-Assembly Using Autonomous Phase Mapping 
 
