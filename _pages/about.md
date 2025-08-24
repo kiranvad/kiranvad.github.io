@@ -18,10 +18,6 @@ My research lies at the intersection of **machine learning** and **materials sci
 
 My core research interest is in **learning interpretable representations for data-efficient scientific discovery**, especially in settings where experimental data is expensive or sparse. I work on developing differentiable, geometry-inspired models that integrate active learning and reinforcement learning for autonomous experiment design. I am particularly interested in representations grounded in **topology and differential geometry** to make scientific workflows both computationally efficient and physically meaningful.
 
-### News
-* UW ChemE wrote a nice short story about our work on building autonomous experimental laboratories. You can find that [here](https://www.cheme.washington.edu/news/article/2024-03-28/recruiting-robots-materials-discovery).
-
-
 ### Beyond Research
 
 Outside the lab, I’m a passionate follower of **cricket** and have been watching, analyzing, and writing about the game for over two decades. I also enjoy **Formula 1**—my weekends are often booked during the race season. I dabble in music production and play a bit of keyboard, with musical tastes ranging from **A. R. Rahman** to **twenty one pilots** and **Yanni**.
