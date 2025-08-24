@@ -8,7 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I am a Postdoctoral Scholar in the [Department of Chemical Engineering](https://www.cheme.washington.edu/) at the University of Washington, Seattle, and a *UW Data Science Postdoctoral Fellow* affiliated with the [eScience Institute](https://escience.washington.edu/). As part of my involvement with the data science community, I co-chaired the eScience Institute’s weekly postdoc seminar series (2021–2022).
+I am a Foreign Guest Researcher at the National Institute of Standards and Technology working on the [Autonomous Formulation Project](https://www.nist.gov/ncnr/ncnr-facility-upgrades/autonomous-formulation-lab-afl).
+Previously, I was a Postdoctoral Scholar in the [Department of Chemical Engineering](https://www.cheme.washington.edu/) at the University of Washington, Seattle, and a *UW Data Science Postdoctoral Fellow* affiliated with the [eScience Institute](https://escience.washington.edu/). As part of my involvement with the data science community, I co-chaired the eScience Institute’s weekly postdoc seminar series (2021–2022).
 
 My research lies at the intersection of **machine learning** and **materials science**, with a focus on building autonomous experimentation workflows for materials discovery and design. Broadly, I develop models and representations that bridge physical insight and data-driven methods to accelerate the discovery of soft materials and nanostructures. My Ph.D. in Materials Science and Engineering (University at Buffalo, SUNY) focused on developing physics-based and data-driven models for material optimization and structure–property mapping. I received my bachelor’s and master’s degrees in Mechanical Engineering from the [Indian Institute of Technology Madras](https://www.iitm.ac.in/), with a specialization in thermal engineering.
 
