@@ -7,6 +7,18 @@ author_profile: true
 
 Invited Talks
 =====
+### 2025
+* **Lila Sciences, Boston, MA** \
+    Differentiable Phase Mapping of Nanoscale Materials      
+
+* **University of Toronoto, Department of Materials Science and Engineering** 
+* **Colorado State University, Department of Chemical and Biological Engineering** 
+* **Northwestern University, Department of Materials Science and Engineering** \
+    Functional Data Analysis Tools for Accelerated Materials Design
+      
+* **Enthought Inc., Austin, TX** \
+    Polyphase: Thermodynamic phase modelling of polymer solutions  
+
 ### 2023
 * **The Kavli Foundation Frontiers of Materials** \
     Symposium X - How to Build a Self-Driving Lab 
@@ -27,6 +39,7 @@ Invited Talks
 
 Contributed Talks
 =====
+
 
 ### 2025
 * **American Physical Society March Meeting** 
