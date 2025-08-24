@@ -7,21 +7,25 @@
   position: relative;
   border-bottom: 2px solid #34495e;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center; /* This centers vertically */
+  min-height: 50px; /* Set a minimum height for the bar */
 }
 
 .news-ticker-label {
-  display: inline-block;
   background: rgba(0,0,0,0.2);
   padding: 5px 15px;
   font-weight: bold;
   margin-right: 20px;
   border-radius: 3px;
+  flex-shrink: 0; /* Prevents the label from shrinking */
 }
 
 .news-ticker {
-  display: inline-block;
-  width: calc(100% - 100px);
+  flex: 1; /* Takes up remaining space */
   overflow: hidden;
+  display: flex;
+  align-items: center; /* Centers the ticker content vertically */
 }
 
 .news-ticker-content {
@@ -29,6 +33,7 @@
   animation: scroll-left 30s linear infinite;
 }
 
+/* Rest of your CSS remains the same */
 .news-ticker-content .news-item {
   margin-right: 50px;
 }
@@ -54,14 +59,14 @@
 }
 
 @media (max-width: 768px) {
+  .news-ticker-container {
+    min-height: 40px; /* Smaller height for mobile */
+  }
+  
   .news-ticker-label {
     font-size: 14px;
     padding: 3px 10px;
     margin-right: 10px;
-  }
-  
-  .news-ticker {
-    width: calc(100% - 80px);
   }
   
   .news-ticker-content {
