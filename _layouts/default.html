@@ -9,7 +9,19 @@ layout: compress
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/news-ticker.css' | relative_url }}">
   </head>
+
+  <div class="news-ticker-container">
+    <div class="news-ticker-label">News:</div>
+    <div class="news-ticker">
+      <div class="news-ticker-content">
+        <span class="news-item">
+          <a href="https://www.cheme.washington.edu/news/article/2024-03-28/recruiting-robots-materials-discovery">Read UW ChemE's Story on our Self-driving Labs Work</a>
+        </span>
+      </div>
+    </div>
+  </div>
 
   <body>
 

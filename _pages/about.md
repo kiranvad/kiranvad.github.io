@@ -8,8 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I am a Foreign Guest Researcher at the National Institute of Standards and Technology working on the [Autonomous Formulation Project](https://www.nist.gov/ncnr/ncnr-facility-upgrades/autonomous-formulation-lab-afl).
-Previously, I was a Postdoctoral Scholar in the [Department of Chemical Engineering](https://www.cheme.washington.edu/) at the University of Washington, Seattle, and a *UW Data Science Postdoctoral Fellow* affiliated with the [eScience Institute](https://escience.washington.edu/). As part of my involvement with the data science community, I co-chaired the eScience Institute’s weekly postdoc seminar series (2021–2022).
+I am a [Foreign Guest Researcher](https://www.nist.gov/people/kiran-vaddi) at the National Institute of Standards and Technology working on the [Autonomous Formulation Project](https://www.nist.gov/ncnr/ncnr-facility-upgrades/autonomous-formulation-lab-afl).
+Previously, I was a Postdoctoral Scholar in the [Department of Chemical Engineering](https://www.cheme.washington.edu/) at the University of Washington, Seattle, and a [UW Data Science Postdoctoral Fellow](https://escience.washington.edu/member/kiran-vaddi/) affiliated with the [eScience Institute](https://escience.washington.edu/). As part of my involvement with the data science community, I co-chaired the eScience Institute’s weekly postdoc seminar series (2021–2022).
 
 My research lies at the intersection of **machine learning** and **materials science**, with a focus on building autonomous experimentation workflows for materials discovery and design. Broadly, I develop models and representations that bridge physical insight and data-driven methods to accelerate the discovery of soft materials and nanostructures. My Ph.D. in Materials Science and Engineering (University at Buffalo, SUNY) focused on developing physics-based and data-driven models for material optimization and structure–property mapping. I received my bachelor’s and master’s degrees in Mechanical Engineering from the [Indian Institute of Technology Madras](https://www.iitm.ac.in/), with a specialization in thermal engineering.
 
@@ -17,6 +17,9 @@ My research lies at the intersection of **machine learning** and **materials sci
 ### Research Interests
 
 My core research interest is in **learning interpretable representations for data-efficient scientific discovery**, especially in settings where experimental data is expensive or sparse. I work on developing differentiable, geometry-inspired models that integrate active learning and reinforcement learning for autonomous experiment design. I am particularly interested in representations grounded in **topology and differential geometry** to make scientific workflows both computationally efficient and physically meaningful.
+
+### News
+* UW ChemE wrote a nice short story about our work on building autonomous experimental laboratories. You can find that [here](https://www.cheme.washington.edu/news/article/2024-03-28/recruiting-robots-materials-discovery).
 
 
 ### Beyond Research
