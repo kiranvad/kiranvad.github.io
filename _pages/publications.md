@@ -10,7 +10,7 @@ These are select publications from each year. You may find the full list on [Goo
 ## 2025
 
 * [Autonomous Phase Mapping of Gold Nanoparticles Synthesis with Differentiable Models of Spectral Shape (2025)](https://chemrxiv.org/engage/chemrxiv/article-details/67930f56fa469535b99a0dd1) **Vaddi, Kiran**, Huat Thart Chiang, and Lilo D. Pozzo.
-    > Under review at npj Computational Materials
+    > Accepted to be published in npj Computational Materials (October 2nd, 2025)
 
     [![Code](https://img.shields.io/badge/Code-GitHub-blue?logo=github)](https://github.com/pozzo-research-group/activephasemap) [![Data](https://img.shields.io/badge/Data-Zenodo-orange?logo=zenodo)](https://github.com/pozzo-research-group/papers/tree/activephasemap-preprint/seed-AuNP-phasemaps)
 
