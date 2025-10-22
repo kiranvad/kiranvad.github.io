@@ -1,0 +1,48 @@
+name: Build and Test Jekyll Site
+
+on:
+  push:
+    branches:
+      - facapp-add-figure
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Install Dependencies
+        run: bundle install
+
+      - name: Build Site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Test Site Structure
+        run: |
+          # Check if the facapp page was built successfully
+          if [ -f "_site/facapp/index.html" ]; then
+            echo "✅ Facapp page built successfully"
+          else
+            echo "❌ Facapp page failed to build"
+            exit 1
+          fi
+          
+          # Check if the overview image exists
+          if [ -f "_site/images/overview.png" ]; then
+            echo "✅ Overview image found"
+          else
+            echo "❌ Overview image missing"
+            exit 1
+          fi
