@@ -1,0 +1,25 @@
+# Google Scholar Statistics
+# Update these values manually from your Google Scholar profile
+# URL: https://scholar.google.com/citations?user=GbNEbEkAAAAJ&hl=en
+
+scholar_id: "GbNEbEkAAAAJ"
+profile_url: "https://scholar.google.com/citations?user=GbNEbEkAAAAJ&hl=en"
+
+# Current statistics (update as needed)
+total_citations: 0  # Update with current citation count
+h_index: 0           # Update with current h-index
+i10_index: 0        # Update with current i10-index
+
+# Citation data by year for histogram
+# Format: year: citation_count
+citations_by_year:
+  2019: 0
+  2020: 0
+  2021: 0
+  2022: 0
+  2023: 0
+  2024: 0
+  2025: 0
+
+# Last updated
+last_updated: "2025-01-22"

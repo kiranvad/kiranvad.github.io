@@ -10,6 +10,8 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
     <link rel="stylesheet" href="{{ '/assets/css/news-ticker.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/scholar-stats.css' | relative_url }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
   <div class="news-ticker-container">
@@ -41,6 +43,7 @@ layout: compress
     </div>
 
     {% include scripts.html %}
+    <script src="{{ '/assets/js/citation-chart.js' | relative_url }}"></script>
 
   </body>
 </html>
