@@ -14,7 +14,7 @@ I aim to build an inclusive, collaborative research and teaching program at the 
 
 My research focuses on discovering sustainable soft materials at scale using AI-driven experimentation. I develop interpretable, data-efficient models and closed-loop optimization frameworks that connect experimental observables to structure–property relationships. The proposed program integrates three thrusts: (i) autonomous, feedback-driven experimental design; (ii) geometry- and physics-informed learning for small, noisy datasets; and (iii) multimodal characterization workflows that link scattering/spectroscopy to predictive modeling. The goal is a practical path to self-driving laboratories that accelerate discovery while maintaining scientific rigor and reproducibility.
 
-![Research Program Overview]({{ '/images/overview.png' | relative_url }})
+<img src="{{ '/images/overview.png' | relative_url }}" alt="Research Program Overview" style="width:75%;">
 
 Key outcomes include robust representations for soft matter systems, uncertainty-aware decision making for experiment planning, and community-facing software to democratize autonomous workflows.
 

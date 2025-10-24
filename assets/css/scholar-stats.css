@@ -92,3 +92,7 @@
     padding: 1rem;
   }
 }
+.scholar-stats-container {
+  transform: scale(0.6);
+  transform-origin: top left;
+}
