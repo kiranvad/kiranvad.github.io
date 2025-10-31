@@ -1,7 +1,15 @@
 /* Google Scholar Statistics Styles */
 
+.scholar-section {
+  margin-bottom: 2.5rem;
+}
+
+.scholar-section h2 {
+  margin-bottom: 1rem;
+}
+
 .scholar-stats-container {
-  margin: 2rem 0;
+  margin: 0;
   padding: 2rem;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 12px;
@@ -10,54 +18,55 @@
 
 .scholar-stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .stat-card {
-  background: white;
+  background: #ffffff;
   padding: 1.5rem;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 .stat-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #2c3e50;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1f2933;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  font-size: 1rem;
-  color: #7f8c8d;
+  font-size: 0.95rem;
+  color: #6b7280;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
 }
 
 .citation-chart-container {
-  background: white;
+  background: #ffffff;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  height: 320px;
 }
 
 .scholar-link {
   text-align: center;
+  margin-top: 1rem;
 }
 
 .scholar-link a {
-  color: #3498db;
+  color: #2563eb;
   text-decoration: none;
   font-weight: 500;
 }
@@ -67,75 +76,127 @@
 }
 
 .scholar-link small {
-  color: #7f8c8d;
+  color: #6b7280;
   font-size: 0.9rem;
+}
+
+/* Tabbed sections shared by publications and talks */
+.tabbed-section {
+  margin-top: 1.5rem;
+}
+
+.chrome-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.chrome-tab {
+  position: relative;
+  border: 1px solid #d1d5db;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  padding: 0.65rem 1.75rem;
+  background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 100%);
+  color: #4b5563;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+}
+
+.chrome-tab::before,
+.chrome-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.chrome-tab::before {
+  left: -10px;
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid #d1d5db;
+}
+
+.chrome-tab::after {
+  right: -10px;
+  border-bottom-left-radius: 10px;
+  border-left: 1px solid #d1d5db;
+}
+
+.chrome-tab:hover {
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.chrome-tab.is-active {
+  background: #ffffff;
+  color: #111827;
+  z-index: 2;
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.15);
+}
+
+.chrome-tab.is-active::before,
+.chrome-tab.is-active::after {
+  display: none;
+}
+
+.chrome-tab:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+.chrome-tab-panels {
+  position: relative;
+  border: 1px solid #d1d5db;
+  border-radius: 0 12px 12px 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+}
+
+.chrome-tab-panel {
+  display: none;
+  padding: 1.5rem;
+}
+
+.chrome-tab-panel.is-active {
+  display: block;
+}
+
+.chrome-tab-panel ul {
+  margin: 0;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .scholar-stats-container {
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 1.25rem;
   }
-  
+
   .scholar-stats-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .stat-number {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
-  
+
   .citation-chart-container {
-    height: 250px;
+    height: 260px;
     padding: 1rem;
   }
-}
-.scholar-stats-container {
-  transform: scale(0.6);
-  transform-origin: top left;
-}
-.scholar-section h2 {
-  margin-bottom: 0.5em;
-}
 
-.scholar-stats-container {
-  margin-bottom: 1em;
-}
-
-/* Tabs */
-.tabs {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0.5em;
-  border-bottom: 1px solid #ccc;
-}
-
-.tab {
-  padding: 0.5em 1em;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  background: #f5f5f5;
-  margin-right: 0.2em;
-  border-radius: 4px 4px 0 0;
-}
-
-.tab.active {
-  background: white;
-  font-weight: bold;
-}
-
-.tab-content {
-  display: none;
-  border: 1px solid #ccc;
-  padding: 1em;
-  background: white;
-  border-radius: 0 4px 4px 4px;
-}
-
-.tab-content.active {
-  display: block;
+  .chrome-tab {
+    padding: 0.55rem 1.25rem;
+  }
 }

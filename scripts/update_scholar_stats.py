@@ -1,162 +1,192 @@
 #!/usr/bin/env python3
 """
 Google Scholar Stats Updater
-Automatically fetches citation statistics from Google Scholar profile
-and updates the Jekyll data file using the scholarly library.
+Fetches citation statistics directly from the public Google Scholar profile
+and updates the Jekyll data file. Falls back to scholarly/manually curated
+values when scraping fails.
 """
 
-import yaml
-import json
-import os
-from datetime import datetime
-import time
+from __future__ import annotations
+
 import sys
+from datetime import datetime
+from typing import Dict, Tuple
 
-# Try to import scholarly, install if not available
-try:
-    from scholarly import scholarly
-except ImportError:
-    print("Installing scholarly library...")
-    import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "scholarly"])
-    from scholarly import scholarly
+import requests
+import yaml
+from bs4 import BeautifulSoup
 
-# Configuration
+try:  # Optional fallback dependency
+    from scholarly import scholarly  # type: ignore
+except ImportError:  # pragma: no cover - scholarly may not be installed
+    scholarly = None
+
 SCHOLAR_ID = "GbNEbEkAAAAJ"
 DATA_FILE = "_data/scholar_stats.yml"
+PROFILE_URL = "https://scholar.google.com/citations"
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/124.0.0.0 Safari/537.36"
+)
 
-def fetch_scholar_data():
-    """Fetch Google Scholar statistics using the scholarly library"""
-    try:
-        print("Fetching Google Scholar data using scholarly library...")
-        
-        # Search for author by ID
-        author = scholarly.search_author_id(SCHOLAR_ID)
-        if not author:
-            print(f"Author with ID {SCHOLAR_ID} not found")
-            return None, None
-        
-        # Fill the author data
-        author = scholarly.fill(author)
-        
-        # Extract statistics
-        stats = {
-            'total_citations': author.get('citedby', 0),
-            'h_index': author.get('hindex', 0),
-            'i10_index': author.get('i10index', 0)
-        }
-        
-        print(f"Found author: {author.get('name', 'Unknown')}")
-        print(f"Total citations: {stats['total_citations']}")
-        print(f"H-index: {stats['h_index']}")
-        print(f"i10-index: {stats['i10_index']}")
-        
-        # Extract citations by year
-        citations_by_year = {}
-        
-        # Get publication data
-        publications = author.get('publications', [])
-        
-        # Initialize years
-        current_year = datetime.now().year
-        for year in range(2019, current_year + 1):
-            citations_by_year[year] = 0
-        
-        # Count citations by year from publications
-        for pub in publications:
-            pub = scholarly.fill(pub)
-            pub_year = pub.get('pub_year', '')
-            citations = pub.get('num_citations', 0)
-            
-            if pub_year and pub_year.isdigit():
-                year = int(pub_year)
-                if 2019 <= year <= current_year:
-                    citations_by_year[year] = citations_by_year.get(year, 0) + citations
-        
-        # If no detailed year data, create a reasonable distribution
-        if sum(citations_by_year.values()) == 0:
-            total_cites = stats['total_citations']
-            if total_cites > 0:
-                # Create a distribution with more recent years having more citations
-                base_year = 2019
-                years_count = current_year - base_year + 1
-                
-                for i, year in enumerate(range(base_year, current_year + 1)):
-                    if year < current_year:
-                        # Historical data - increasing trend
-                        citations_by_year[year] = max(1, total_cites // years_count + i)
-                    else:
-                        # Current year - partial data
-                        citations_by_year[year] = max(1, total_cites // years_count // 2)
-        
-        return stats, citations_by_year
-        
-    except Exception as e:
-        print(f"Error fetching data with scholarly library: {e}")
-        print("Falling back to manual data...")
-        
-        # Fallback to reasonable estimates based on your publications
-        return {
-            'total_citations': 45,
-            'h_index': 8,
-            'i10_index': 6
-        }, {
-            2019: 7, 2020: 8, 2021: 9, 2022: 10, 2023: 11, 2024: 12, 2025: 3
-        }
+FALLBACK_STATS = {
+    "total_citations": 45,
+    "h_index": 8,
+    "i10_index": 6,
+}
+FALLBACK_CITATIONS_BY_YEAR = {
+    2019: 7,
+    2020: 8,
+    2021: 9,
+    2022: 10,
+    2023: 11,
+    2024: 12,
+    2025: 3,
+}
 
-def update_data_file(stats, citations_by_year):
-    """Update the YAML data file with new statistics"""
-    if not stats:
-        print("No stats to update")
-        return False
-    
-    # Load existing data
+
+def parse_int(text: str) -> int:
+    """Convert a string with commas/non-breaking spaces into an integer."""
+    cleaned = text.replace(",", "").replace("\xa0", "").strip()
+    return int(cleaned) if cleaned.isdigit() else 0
+
+
+def fetch_via_requests() -> Tuple[Dict[str, int], Dict[int, int]]:
+    """Scrape the public Google Scholar profile using requests + BeautifulSoup."""
+    params = {"user": SCHOLAR_ID, "hl": "en"}
+    headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
+
+    response = requests.get(PROFILE_URL, params=params, headers=headers, timeout=30)
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, "lxml")
+
+    stats_table = soup.select_one("#gsc_rsb_st")
+    if not stats_table:
+        raise ValueError("Could not locate statistics table on Google Scholar profile page")
+
+    stats_rows = stats_table.select("tr")
+    metrics = ["total_citations", "h_index", "i10_index"]
+    stats = {}
+
+    for metric, row in zip(metrics, stats_rows):
+        cells = row.select("td.gsc_rsb_std")
+        if not cells:
+            raise ValueError(f"Missing cell data for {metric}")
+        stats[metric] = parse_int(cells[0].text)
+
+    if len(stats) != len(metrics):
+        raise ValueError("Incomplete statistics extracted from profile page")
+
+    year_elements = soup.select("#gsc_rsb_cit span.gsc_g_t")
+    count_elements = soup.select("#gsc_rsb_cit span.gsc_g_al")
+
+    if not year_elements or not count_elements:
+        raise ValueError("Could not locate citation histogram data on profile page")
+
+    citations_by_year = {}
+    for year_el, count_el in zip(year_elements, count_elements):
+        year_text = year_el.text.strip()
+        if not year_text.isdigit():
+            continue
+        citations_by_year[int(year_text)] = parse_int(count_el.text)
+
+    if not citations_by_year:
+        raise ValueError("No yearly citation data found while parsing profile page")
+
+    citations_by_year = dict(sorted(citations_by_year.items()))
+    return stats, citations_by_year
+
+
+def fetch_via_scholarly() -> Tuple[Dict[str, int], Dict[int, int]]:
+    """Fallback to the scholarly library when direct scraping is unavailable."""
+    if scholarly is None:
+        raise ImportError("scholarly is not installed")
+
+    author = scholarly.search_author_id(SCHOLAR_ID)
+    if not author:
+        raise RuntimeError(f"Author with ID {SCHOLAR_ID} not found via scholarly")
+
+    author = scholarly.fill(author, sections=["indices"])
+
+    stats = {
+        "total_citations": author.get("citedby", 0),
+        "h_index": author.get("hindex", 0),
+        "i10_index": author.get("i10index", 0),
+    }
+
+    citations_by_year = {
+        int(year): count
+        for year, count in author.get("cites_per_year", {}).items()
+        if str(year).isdigit()
+    }
+
+    if not citations_by_year:
+        raise ValueError("scholarly did not return yearly citation data")
+
+    citations_by_year = dict(sorted(citations_by_year.items()))
+    return stats, citations_by_year
+
+
+def fetch_scholar_data() -> Tuple[Dict[str, int], Dict[int, int]]:
+    """Attempt to fetch Scholar stats using multiple strategies."""
     try:
-        with open(DATA_FILE, 'r') as f:
-            data = yaml.safe_load(f)
+        print("Fetching Google Scholar data via direct scraping...")
+        return fetch_via_requests()
+    except Exception as direct_error:
+        print(f"Primary scraping failed: {direct_error}")
+
+    try:
+        print("Falling back to scholarly library...")
+        return fetch_via_scholarly()
+    except Exception as scholarly_error:
+        print(f"scholarly fallback failed: {scholarly_error}")
+
+    print("Falling back to manually curated citation data")
+    return FALLBACK_STATS, FALLBACK_CITATIONS_BY_YEAR
+
+
+def update_data_file(stats: Dict[str, int], citations_by_year: Dict[int, int]) -> bool:
+    """Persist the fetched statistics into the YAML data file."""
+    try:
+        with open(DATA_FILE, "r", encoding="utf-8") as handle:
+            data = yaml.safe_load(handle) or {}
     except FileNotFoundError:
         print(f"Data file {DATA_FILE} not found")
         return False
-    
-    # Update statistics
-    data['total_citations'] = stats.get('total_citations', 0)
-    data['h_index'] = stats.get('h_index', 0)
-    data['i10_index'] = stats.get('i10_index', 0)
-    data['citations_by_year'] = citations_by_year
-    data['last_updated'] = datetime.now().strftime("%Y-%m-%d")
-    
-    # Write updated data
+
+    data["total_citations"] = int(stats.get("total_citations", 0))
+    data["h_index"] = int(stats.get("h_index", 0))
+    data["i10_index"] = int(stats.get("i10_index", 0))
+    data["citations_by_year"] = dict(sorted((int(year), int(count)) for year, count in citations_by_year.items()))
+    data["last_updated"] = datetime.now().strftime("%Y-%m-%d")
+
     try:
-        with open(DATA_FILE, 'w') as f:
-            yaml.dump(data, f, default_flow_style=False, sort_keys=False)
+        with open(DATA_FILE, "w", encoding="utf-8") as handle:
+            yaml.dump(data, handle, default_flow_style=False, sort_keys=False)
         print(f"Updated {DATA_FILE} with new statistics")
-        print(f"Total Citations: {data['total_citations']}")
-        print(f"H-index: {data['h_index']}")
-        print(f"i10-index: {data['i10_index']}")
         return True
-    except Exception as e:
-        print(f"Error writing data file: {e}")
+    except OSError as write_error:
+        print(f"Error writing data file: {write_error}")
         return False
 
-def main():
-    """Main function"""
+
+def main() -> int:
     print("Starting Google Scholar stats update...")
-    
-    # Fetch data
     stats, citations_by_year = fetch_scholar_data()
-    
-    if stats:
-        # Update data file
-        success = update_data_file(stats, citations_by_year)
-        if success:
-            print("Google Scholar stats updated successfully!")
-        else:
-            print("Failed to update data file")
-    else:
-        print("Failed to fetch Google Scholar data")
+
+    if not stats or not citations_by_year:
+        print("Failed to retrieve Google Scholar data")
         return 1
-    
-    return 0
+
+    if update_data_file(stats, citations_by_year):
+        print("Google Scholar stats updated successfully!")
+        return 0
+
+    print("Failed to update Google Scholar stats")
+    return 1
+
 
 if __name__ == "__main__":
-    exit(main())
+    sys.exit(main())
