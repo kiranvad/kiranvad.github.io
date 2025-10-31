@@ -12,7 +12,7 @@ from __future__ import annotations
 import os
 import sys
 from datetime import datetime
-from typing import Dict, Tuple
+from typing import Dict, Optional, Tuple, Union
 
 import requests
 import yaml
@@ -49,8 +49,13 @@ FALLBACK_CITATIONS_BY_YEAR = {
 }
 
 
-def parse_int(value: str | int | float) -> int:
+NumberLike = Union[str, int, float]
+
+
+def parse_int(value: Optional[NumberLike]) -> int:
     """Best-effort conversion of strings with commas or spaces to integers."""
+    if value is None:
+        return 0
     if isinstance(value, (int, float)):
         return int(value)
     cleaned = value.replace(",", "").replace("\xa0", "").strip()
@@ -83,12 +88,25 @@ def fetch_via_serpapi() -> Tuple[Dict[str, int], Dict[int, int]]:
     if not table:
         raise ValueError("Missing citation table in SerpAPI response")
 
-    metrics = {entry.get("name", "").lower(): entry for entry in table}
+    metrics: Dict[str, Dict] = {}
+    for entry in table:
+        raw_name = entry.get("name")
+        if not raw_name:
+            continue
+        normalized_name = raw_name.strip().lower().replace("-", "_")
+        metrics[normalized_name] = entry
+
+    def extract_metric(metric_key: str) -> int:
+        entry = metrics.get(metric_key)
+        if not entry:
+            return 0
+        data = entry.get(metric_key) or entry.get(metric_key.replace("_", "-")) or {}
+        return parse_int(data.get("all", 0))
 
     stats = {
-        "total_citations": parse_int(metrics.get("citations", {}).get("citations", {}).get("all", 0)),
-        "h_index": parse_int(metrics.get("h_index", {}).get("h_index", {}).get("all", 0)),
-        "i10_index": parse_int(metrics.get("i10-index", {}).get("i10_index", {}).get("all", 0)),
+        "total_citations": extract_metric("citations"),
+        "h_index": extract_metric("h_index"),
+        "i10_index": extract_metric("i10_index"),
     }
 
     if not any(stats.values()):
@@ -122,14 +140,32 @@ def fetch_via_requests() -> Tuple[Dict[str, int], Dict[int, int]]:
         raise ValueError("Could not locate statistics table on profile page")
 
     stats_rows = stats_table.select("tr")
-    metrics = ["total_citations", "h_index", "i10_index"]
     stats: Dict[str, int] = {}
 
-    for metric, row in zip(metrics, stats_rows):
-        cell = row.select_one("td.gsc_rsb_std")
-        if not cell:
-            raise ValueError(f"Missing value for {metric}")
-        stats[metric] = parse_int(cell.text)
+    label_map = {
+        "citations": "total_citations",
+        "h-index": "h_index",
+        "h_index": "h_index",
+        "i10-index": "i10_index",
+        "i10_index": "i10_index",
+    }
+
+    for row in stats_rows:
+        label_el = row.select_one("td.gsc_rsb_sth, th.gsc_rsb_sth")
+        value_cells = row.select("td.gsc_rsb_std")
+
+        if not value_cells:
+            continue
+
+        label_text = (label_el.text if label_el else "").strip().lower().replace("–", "-")
+        label_key = label_map.get(label_text)
+        if not label_key:
+            continue
+
+        stats[label_key] = parse_int(value_cells[0].text)
+
+    if "total_citations" not in stats:
+        raise ValueError("Could not extract total citations from profile page")
 
     year_elements = soup.select("#gsc_rsb_cit span.gsc_g_t")
     count_elements = soup.select("#gsc_rsb_cit span.gsc_g_al")
