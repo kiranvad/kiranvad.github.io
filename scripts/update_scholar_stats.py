@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""
-Google Scholar Stats Updater
-Fetches citation statistics directly from the public Google Scholar profile
-and updates the Jekyll data file. Falls back to scholarly/manually curated
-values when scraping fails.
+"""Google Scholar stats updater.
+
+The fetcher prioritizes SerpAPI (stable, official Google Scholar scraper)
+when the ``SERPAPI_API_KEY`` environment variable is provided. If the key is
+absent or SerpAPI fails, it falls back to a lightweight HTML scrape and, as a
+last resort, the scholarly library or static defaults.
 """
 
 from __future__ import annotations
 
+import os
 import sys
 from datetime import datetime
 from typing import Dict, Tuple
@@ -18,17 +20,18 @@ from bs4 import BeautifulSoup
 
 try:  # Optional fallback dependency
     from scholarly import scholarly  # type: ignore
-except ImportError:  # pragma: no cover - scholarly may not be installed
+except ImportError:  # pragma: no cover
     scholarly = None
 
 SCHOLAR_ID = "GbNEbEkAAAAJ"
-DATA_FILE = "_data/scholar_stats.yml"
 PROFILE_URL = "https://scholar.google.com/citations"
+DATA_FILE = "_data/scholar_stats.yml"
 USER_AGENT = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/124.0.0.0 Safari/537.36"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
+SERPAPI_ENDPOINT = "https://serpapi.com/search.json"
+SERPAPI_KEY = os.getenv("SERPAPI_API_KEY")
 
 FALLBACK_STATS = {
     "total_citations": 45,
@@ -46,14 +49,66 @@ FALLBACK_CITATIONS_BY_YEAR = {
 }
 
 
-def parse_int(text: str) -> int:
-    """Convert a string with commas/non-breaking spaces into an integer."""
-    cleaned = text.replace(",", "").replace("\xa0", "").strip()
+def parse_int(value: str | int | float) -> int:
+    """Best-effort conversion of strings with commas or spaces to integers."""
+    if isinstance(value, (int, float)):
+        return int(value)
+    cleaned = value.replace(",", "").replace("\xa0", "").strip()
     return int(cleaned) if cleaned.isdigit() else 0
 
 
+def fetch_via_serpapi() -> Tuple[Dict[str, int], Dict[int, int]]:
+    """Retrieve statistics via SerpAPI's google_scholar_author engine."""
+    if not SERPAPI_KEY:
+        raise ValueError("SERPAPI_API_KEY not provided")
+
+    params = {
+        "engine": "google_scholar_author",
+        "author_id": SCHOLAR_ID,
+        "hl": "en",
+        "api_key": SERPAPI_KEY,
+    }
+
+    response = requests.get(SERPAPI_ENDPOINT, params=params, timeout=30)
+    response.raise_for_status()
+
+    payload = response.json()
+    if "error" in payload:
+        raise RuntimeError(payload["error"])
+
+    cited_by = payload.get("cited_by", {})
+    table = cited_by.get("table", [])
+    graph = cited_by.get("graph", [])
+
+    if not table:
+        raise ValueError("Missing citation table in SerpAPI response")
+
+    metrics = {entry.get("name", "").lower(): entry for entry in table}
+
+    stats = {
+        "total_citations": parse_int(metrics.get("citations", {}).get("citations", {}).get("all", 0)),
+        "h_index": parse_int(metrics.get("h_index", {}).get("h_index", {}).get("all", 0)),
+        "i10_index": parse_int(metrics.get("i10-index", {}).get("i10_index", {}).get("all", 0)),
+    }
+
+    if not any(stats.values()):
+        raise ValueError("SerpAPI response did not contain citation metrics")
+
+    citations_by_year: Dict[int, int] = {}
+    for node in graph:
+        year = node.get("year")
+        citations = node.get("citations")
+        if isinstance(year, int) and year >= 1900:
+            citations_by_year[year] = parse_int(citations or 0)
+
+    if not citations_by_year:
+        raise ValueError("SerpAPI response missing citation graph")
+
+    return stats, dict(sorted(citations_by_year.items()))
+
+
 def fetch_via_requests() -> Tuple[Dict[str, int], Dict[int, int]]:
-    """Scrape the public Google Scholar profile using requests + BeautifulSoup."""
+    """Fallback scraper using requests + BeautifulSoup."""
     params = {"user": SCHOLAR_ID, "hl": "en"}
     headers = {"User-Agent": USER_AGENT, "Accept-Language": "en-US,en;q=0.9"}
 
@@ -64,49 +119,44 @@ def fetch_via_requests() -> Tuple[Dict[str, int], Dict[int, int]]:
 
     stats_table = soup.select_one("#gsc_rsb_st")
     if not stats_table:
-        raise ValueError("Could not locate statistics table on Google Scholar profile page")
+        raise ValueError("Could not locate statistics table on profile page")
 
     stats_rows = stats_table.select("tr")
     metrics = ["total_citations", "h_index", "i10_index"]
-    stats = {}
+    stats: Dict[str, int] = {}
 
     for metric, row in zip(metrics, stats_rows):
-        cells = row.select("td.gsc_rsb_std")
-        if not cells:
-            raise ValueError(f"Missing cell data for {metric}")
-        stats[metric] = parse_int(cells[0].text)
-
-    if len(stats) != len(metrics):
-        raise ValueError("Incomplete statistics extracted from profile page")
+        cell = row.select_one("td.gsc_rsb_std")
+        if not cell:
+            raise ValueError(f"Missing value for {metric}")
+        stats[metric] = parse_int(cell.text)
 
     year_elements = soup.select("#gsc_rsb_cit span.gsc_g_t")
     count_elements = soup.select("#gsc_rsb_cit span.gsc_g_al")
 
     if not year_elements or not count_elements:
-        raise ValueError("Could not locate citation histogram data on profile page")
+        raise ValueError("Could not locate citation histogram data")
 
-    citations_by_year = {}
+    citations_by_year: Dict[int, int] = {}
     for year_el, count_el in zip(year_elements, count_elements):
         year_text = year_el.text.strip()
-        if not year_text.isdigit():
-            continue
-        citations_by_year[int(year_text)] = parse_int(count_el.text)
+        if year_text.isdigit():
+            citations_by_year[int(year_text)] = parse_int(count_el.text)
 
     if not citations_by_year:
-        raise ValueError("No yearly citation data found while parsing profile page")
+        raise ValueError("No yearly citation data found")
 
-    citations_by_year = dict(sorted(citations_by_year.items()))
-    return stats, citations_by_year
+    return stats, dict(sorted(citations_by_year.items()))
 
 
 def fetch_via_scholarly() -> Tuple[Dict[str, int], Dict[int, int]]:
-    """Fallback to the scholarly library when direct scraping is unavailable."""
+    """Last-resort fetch using the scholarly library."""
     if scholarly is None:
-        raise ImportError("scholarly is not installed")
+        raise ImportError("scholarly not installed")
 
     author = scholarly.search_author_id(SCHOLAR_ID)
     if not author:
-        raise RuntimeError(f"Author with ID {SCHOLAR_ID} not found via scholarly")
+        raise RuntimeError(f"Author {SCHOLAR_ID} not found via scholarly")
 
     author = scholarly.fill(author, sections=["indices"])
 
@@ -117,38 +167,40 @@ def fetch_via_scholarly() -> Tuple[Dict[str, int], Dict[int, int]]:
     }
 
     citations_by_year = {
-        int(year): count
+        int(year): int(count)
         for year, count in author.get("cites_per_year", {}).items()
         if str(year).isdigit()
     }
 
     if not citations_by_year:
-        raise ValueError("scholarly did not return yearly citation data")
+        raise ValueError("scholarly did not emit yearly citation data")
 
-    citations_by_year = dict(sorted(citations_by_year.items()))
-    return stats, citations_by_year
+    return stats, dict(sorted(citations_by_year.items()))
 
 
 def fetch_scholar_data() -> Tuple[Dict[str, int], Dict[int, int]]:
-    """Attempt to fetch Scholar stats using multiple strategies."""
-    try:
-        print("Fetching Google Scholar data via direct scraping...")
-        return fetch_via_requests()
-    except Exception as direct_error:
-        print(f"Primary scraping failed: {direct_error}")
+    """Best-effort retrieval with cascading fallbacks."""
+    fetchers = [
+        ("SerpAPI", fetch_via_serpapi),
+        ("requests scrape", fetch_via_requests),
+        ("scholarly", fetch_via_scholarly),
+    ]
 
-    try:
-        print("Falling back to scholarly library...")
-        return fetch_via_scholarly()
-    except Exception as scholarly_error:
-        print(f"scholarly fallback failed: {scholarly_error}")
+    for name, fetcher in fetchers:
+        try:
+            print(f"Attempting fetch via {name}...")
+            stats, yearly = fetcher()
+            print(f"Success via {name}")
+            return stats, yearly
+        except Exception as error:  # pragma: no cover - diagnostic output
+            print(f"{name} fetch failed: {error}")
 
-    print("Falling back to manually curated citation data")
+    print("Falling back to static citation data")
     return FALLBACK_STATS, FALLBACK_CITATIONS_BY_YEAR
 
 
 def update_data_file(stats: Dict[str, int], citations_by_year: Dict[int, int]) -> bool:
-    """Persist the fetched statistics into the YAML data file."""
+    """Persist fetched statistics to the YAML datastore."""
     try:
         with open(DATA_FILE, "r", encoding="utf-8") as handle:
             data = yaml.safe_load(handle) or {}
@@ -168,23 +220,23 @@ def update_data_file(stats: Dict[str, int], citations_by_year: Dict[int, int]) -
         print(f"Updated {DATA_FILE} with new statistics")
         return True
     except OSError as write_error:
-        print(f"Error writing data file: {write_error}")
+        print(f"Failed to write data file: {write_error}")
         return False
 
 
 def main() -> int:
     print("Starting Google Scholar stats update...")
-    stats, citations_by_year = fetch_scholar_data()
+    stats, yearly = fetch_scholar_data()
 
-    if not stats or not citations_by_year:
-        print("Failed to retrieve Google Scholar data")
+    if not stats or not yearly:
+        print("Unable to retrieve Google Scholar statistics")
         return 1
 
-    if update_data_file(stats, citations_by_year):
+    if update_data_file(stats, yearly):
         print("Google Scholar stats updated successfully!")
         return 0
 
-    print("Failed to update Google Scholar stats")
+    print("Google Scholar stats update failed")
     return 1
 
 
