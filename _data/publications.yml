@@ -14,7 +14,7 @@
 -
   year: 2025
   title: "Efficient analysis of small-angle scattering curves for large biomolecular assemblies using Monte Carlo methods"
-  link: "https://doi.org/10.1107/S1600576725001201"
+  link: "https://journals.iucr.org/paper?uu5014"
   journal: "Journal of Applied Crystallography 58 (3)"
   authors: "Chiang, Huat Thart; Zhang, Zhiyin; Vaddi, Kiran; Tezcan, F. Akif; Pozzo, Lilo D."
   code:
@@ -23,7 +23,7 @@
 -
   year: 2024
   title: "Self-assembly of a Triblock Copolymer in the Presence of a Rigid Conjugated Polyelectrolyte"
-  link: "https://doi.org/10.1021/acs.macromol.4c01814"
+  link: "https://pubs.acs.org/doi/full/10.1021/acs.macromol.4c02429"
   journal: "Macromolecules 57 (24), 11717–11726"
   authors: "Li, Karen; Vaddi, Kiran; Seifert, Soenke; Mata, Jitendra; Pozzo, Lilo D."
   code:
@@ -34,7 +34,7 @@
 -
   year: 2024
   title: "Data-driven exploration of silver nanoplate formation in multidimensional chemical design spaces"
-  link: "https://doi.org/10.1039/D4DD00131A"
+  link: "https://pubs.rsc.org/en/content/articlehtml/2024/dd/d4dd00211c"
   journal: "Digital Discovery 3 (11), 2252–2264"
   authors: "Chiang, Huat Thart; Vaddi, Kiran; Pozzo, Lilo D."
   code:
@@ -43,7 +43,7 @@
 -
   year: 2023
   title: "A high-throughput workflow for the synthesis of CdSe nanocrystals using a sonochemical materials acceleration platform"
-  link: "https://doi.org/10.1039/D3DD00052D"
+  link: "https://pubs.rsc.org/en/content/articlehtml/2023/dd/d3dd00033h"
   journal: "Digital Discovery 2 (4), 1042–1057"
   authors: "Politi, Maria; Baum, Fabio; Vaddi, Kiran; Antonio, Edwin; Vasquez, Joshua; Bishop, Brittany P.; Peek, Nadya; Holmberg, Vincent C.; Pozzo, Lilo D."
   notes:
@@ -54,7 +54,7 @@
 -
   year: 2023
   title: "Metric geometry tools for automatic structure phase map generation"
-  link: "https://doi.org/10.1039/D3DD00041A"
+  link: "https://pubs.rsc.org/en/content/articlehtml/2023/dd/d3dd00105a"
   journal: "Digital Discovery 2 (5), 1471–1483"
   authors: "Vaddi, Kiran; Li, Karen; Pozzo, Lilo D."
   code:
@@ -65,7 +65,7 @@
 -
   year: 2023
   title: "Construction and high throughput exploration of phase diagrams of multi-component organic blends"
-  link: "https://doi.org/10.1016/j.commatsci.2022.111829"
+  link: "https://www.sciencedirect.com/science/article/pii/S0927025622005407"
   journal: "Computational Materials Science 216, 111829"
   authors: "Vaddi, Kiran; Liu, H.; Pokuri, Balaji Sesha Sarath; Ganapathysubramanian, Baskar; Wodo, Olga"
   code:
@@ -74,7 +74,7 @@
 -
   year: 2022
   title: "Autonomous retrosynthesis of gold nanoparticles via spectral shape matching"
-  link: "https://doi.org/10.1039/D2DD00025C"
+  link: "https://pubs.rsc.org/en/content/articlehtml/2022/dd/d2dd00025c"
   journal: "Digital Discovery 1 (4), 502–510"
   authors: "Vaddi, Kiran; Chiang, Huat Thart; Pozzo, Lilo D."
   notes:
@@ -87,7 +87,7 @@
 -
   year: 2022
   title: "Multivariate analysis of peptide-driven nucleation and growth of Au nanoparticles"
-  link: "https://doi.org/10.1039/D2DD00047D"
+  link: "https://pubs.rsc.org/en/content/articlehtml/2022/dd/d2dd00017b"
   journal: "Digital Discovery 1 (4), 427–439"
   authors: "Lachowski, Kacper J.; Vaddi, Kiran; Naser, Nada Y.; Baneyx, François; Pozzo, Lilo D."
   code:
@@ -98,7 +98,7 @@
 -
   year: 2022
   title: "Active knowledge extraction from cyclic voltammetry"
-  link: "https://doi.org/10.3390/en15134575"
+  link: "https://www.mdpi.com/1996-1073/15/13/4575"
   journal: "Energies 15 (13), 4575"
   authors: "Vaddi, Kiran; Wodo, Olga"
   code:
@@ -107,7 +107,7 @@
 -
   year: 2021
   title: "Representations for Data-Driven Material Discovery"
-  link: "https://github.com/kiranvad/PhDThesis"
+  link: "https://www.proquest.com/openview/4df4c360a5c128c1961fdac59af536e3/1?pq-origsite=gscholar&cbl=18750&diss=y"
   journal: "PhD Dissertation, State University of New York at Buffalo"
   authors: "Vaddi, Kiran"
   code:
@@ -116,14 +116,14 @@
 -
   year: 2020
   title: "Reduction of Escape Cone Losses in Luminescent Solar Concentrators Using High-Contrast Gratings"
-  link: "https://doi.org/10.1007/978-981-15-2666-4_4"
+  link: "https://link.springer.com/chapter/10.1007/978-981-15-2666-4_5"
   journal: "Advances in Energy Research Vol. 1, 37–43"
   authors: "Elikkottil, Athira; Vaddi, Kiran; Reddy, K. S.; Pesala, Bala"
 
 -
   year: 2019
   title: "Metric learning for high-throughput combinatorial data sets"
-  link: "https://doi.org/10.1021/acscombsci.9b00102"
+  link: "https://pubs.acs.org/doi/full/10.1021/acscombsci.9b00086"
   journal: "ACS Combinatorial Science 21 (11), 726–735"
   authors: "Vaddi, Kiran; Wodo, Olga"
   code:

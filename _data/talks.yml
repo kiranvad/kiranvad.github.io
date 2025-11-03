@@ -1,0 +1,120 @@
+-
+  type: invited
+  year: 2025
+  event: "Lila Sciences"
+  location: "Boston, MA"
+  title: "Differentiable Phase Mapping of Nanoscale Materials"
+
+-
+  type: invited
+  year: 2025
+  event: "Indian Institute of Technology Madras"
+  location: "Chennai, TN"
+  title: "Functional Data Analysis Tools for Accelerated Materials Design"
+
+-
+  type: invited
+  year: 2025
+  event: "Colorado State University"
+  location: "Department of Chemical and Biological Engineering"
+
+-
+  type: invited
+  year: 2025
+  event: "Enthought Inc."
+  location: "Austin, TX"
+  title: "Polyphase: Thermodynamic phase modelling of polymer solutions"
+
+-
+  type: invited
+  year: 2023
+  event: "The Kavli Foundation Frontiers of Materials"
+  title: "Symposium X – How to Build a Self-Driving Lab"
+
+-
+  type: invited
+  year: 2023
+  event: "Materials Research Society"
+  title: "A Tutorial on Functional Data Analysis for High-Throughput Experiments"
+
+-
+  type: invited
+  year: 2023
+  event: "UW Data Science Seminar"
+  title: "Functional data analysis tools for autonomous experimentation"
+
+-
+  type: invited
+  year: 2023
+  event: "American Chemical Society Fall Meeting"
+  title: "Cold, warm, warmer, hot! Impact of distance metrics on autonomous experimentation"
+
+-
+  type: invited
+  year: 2020
+  event: "IEEE Rochester Section Chapter"
+  title: "Function Space Data Representation of Temporal Signals for Machine Learning"
+
+-
+  type: contributed
+  year: 2025
+  event: "American Physical Society March Meeting"
+
+-
+  type: contributed
+  year: 2025
+  event: "Materials Research Society Spring Meeting"
+  title: "Differentiable Phase Mapping for Autonomously Engineering Soft Matter"
+
+-
+  type: contributed
+  year: 2024
+  event: "American Chemical Society Fall Meeting"
+  title: "Understanding Design Rules of Colloidal Self-Assembly Using Autonomous Phase Mapping"
+
+-
+  type: contributed
+  year: 2024
+  event: "Materials Research Society Spring Meeting"
+  title: "High-Throughput Structural Investigation of Block Copolymer and Conjugated Polymer Co-Assemblies"
+
+-
+  type: contributed
+  year: 2024
+  event: "Materials Research Society Spring Meeting"
+
+-
+  type: contributed
+  year: 2024
+  event: "ACS Colloids"
+  title: "Understanding Design Rules of Colloidal Self-Assembly Using Autonomous Phase Mapping"
+
+-
+  type: contributed
+  year: 2023
+  event: "American Institute for Chemical Engineers"
+  title: "Understanding Design Rules of Colloidal Self-Assembly Using Autonomous Phase Mapping"
+
+-
+  type: contributed
+  year: 2023
+  event: "Materials Research Society Fall Meeting"
+  title: "Function Space Representations for Complex Material Workflows"
+
+-
+  type: contributed
+  year: 2023
+  event: "American Physical Society March Meeting"
+  title: "Metric geometry tools for automatic structure phase map generation"
+
+-
+  type: contributed
+  year: 2022
+  event: "Gordon Research Conference on Computational Materials Sciences"
+  title: "Shape-based data representations for experimental spectra"
+
+-
+  type: contributed
+  year: 2022
+  event: "Materials Research Society Spring Meeting"
+  title: "Autonomous retrosynthesis of nanoscale structures via spectral shape matching"

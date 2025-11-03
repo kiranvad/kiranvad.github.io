@@ -1,0 +1,21 @@
+{% assign talk = include.talk %}
+<li class="talk-item">
+  <p class="talk-event">
+    <strong>{{ talk.event }}</strong>
+    {% if talk.location %}
+      <span class="talk-location"> — {{ talk.location }}</span>
+    {% endif %}
+  </p>
+  {% if talk.title %}
+    <p class="talk-title">{{ talk.title }}</p>
+  {% endif %}
+  {% if talk.notes %}
+    {% assign notes = talk.notes | arrayify %}
+    <div class="talk-notes">
+      {% for note in notes %}
+        {% assign rendered = note | markdownify %}
+        <p class="talk-note">{{ rendered | replace: '<p>', '' | replace: '</p>', '' | strip }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+</li>
