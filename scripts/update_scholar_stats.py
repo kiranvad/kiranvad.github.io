@@ -34,18 +34,16 @@ SERPAPI_ENDPOINT = "https://serpapi.com/search.json"
 SERPAPI_KEY = os.getenv("SERPAPI_API_KEY")
 
 FALLBACK_STATS = {
-    "total_citations": 45,
-    "h_index": 8,
-    "i10_index": 6,
+    "total_citations": 106,
+    "h_index": 5,
+    "i10_index": 3,
 }
 FALLBACK_CITATIONS_BY_YEAR = {
-    2019: 7,
-    2020: 8,
-    2021: 9,
-    2022: 10,
-    2023: 11,
-    2024: 12,
-    2025: 3,
+    2021: 3,
+    2022: 5,
+    2023: 29,
+    2024: 25,
+    2025: 44,
 }
 
 
