@@ -1,0 +1,71 @@
+{% assign pub = include.publication %}
+{% assign code_links = pub.code | default: empty %}
+{% assign data_links = pub.data | default: empty %}
+{% assign notes = pub.notes | default: empty %}
+
+<li class="publication-item">
+  <p class="publication-title">
+    {% if pub.link %}
+      <a href="{{ pub.link }}" rel="noopener" target="_blank">{{ pub.title }}</a>
+    {% else %}
+      {{ pub.title }}
+    {% endif %}
+  </p>
+
+  {% if pub.journal %}
+    <p class="publication-journal"><em>{{ pub.journal }}</em></p>
+  {% endif %}
+
+  {% if pub.authors %}
+    <p class="publication-authors">{{ pub.authors }}</p>
+  {% endif %}
+
+  {% if notes %}
+    {% assign notes_array = notes | arrayify %}
+    <div class="publication-notes">
+      {% for note in notes_array %}
+        {% assign rendered_note = note | markdownify %}
+        <p class="publication-note">{{ rendered_note | replace: '<p>', '' | replace: '</p>', '' | strip }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if code_links or data_links %}
+    <div class="publication-links">
+      {% if code_links %}
+        {% assign codes = code_links | arrayify %}
+        {% for url in codes %}
+          {% assign badge_src = 'https://img.shields.io/badge/Code-Link-blue?logo=code' %}
+          {% assign badge_alt = 'Code link' %}
+          {% if url contains 'github' %}
+            {% assign badge_src = 'https://img.shields.io/badge/Code-GitHub-blue?logo=github' %}
+            {% assign badge_alt = 'Code on GitHub' %}
+          {% elsif url contains 'gitlab' %}
+            {% assign badge_src = 'https://img.shields.io/badge/Code-GitLab-orange?logo=gitlab' %}
+            {% assign badge_alt = 'Code on GitLab' %}
+          {% endif %}
+          <a class="badge-link" href="{{ url }}" target="_blank" rel="noopener">
+            <img src="{{ badge_src }}" alt="{{ badge_alt }}">
+          </a>
+        {% endfor %}
+      {% endif %}
+      {% if data_links %}
+        {% assign datasets = data_links | arrayify %}
+        {% for url in datasets %}
+          {% assign data_badge = 'https://img.shields.io/badge/Data-Resource-orange?logo=open-access' %}
+          {% assign data_alt = 'Data resource' %}
+          {% if url contains 'zenodo' %}
+            {% assign data_badge = 'https://img.shields.io/badge/Data-Zenodo-orange?logo=zenodo' %}
+            {% assign data_alt = 'Data on Zenodo' %}
+          {% elsif url contains 'github' %}
+            {% assign data_badge = 'https://img.shields.io/badge/Data-GitHub-blue?logo=github' %}
+            {% assign data_alt = 'Data on GitHub' %}
+          {% endif %}
+          <a class="badge-link" href="{{ url }}" target="_blank" rel="noopener">
+            <img src="{{ data_badge }}" alt="{{ data_alt }}">
+          </a>
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endif %}
+</li>

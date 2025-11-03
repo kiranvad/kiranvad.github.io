@@ -88,26 +88,41 @@ def fetch_via_serpapi() -> Tuple[Dict[str, int], Dict[int, int]]:
     if not table:
         raise ValueError("Missing citation table in SerpAPI response")
 
-    metrics: Dict[str, Dict] = {}
-    for entry in table:
-        raw_name = entry.get("name")
-        if not raw_name:
-            continue
-        normalized_name = raw_name.strip().lower().replace("-", "_")
-        metrics[normalized_name] = entry
-
-    def extract_metric(metric_key: str) -> int:
-        entry = metrics.get(metric_key)
-        if not entry:
-            return 0
-        data = entry.get(metric_key) or entry.get(metric_key.replace("_", "-")) or {}
-        return parse_int(data.get("all", 0))
-
     stats = {
-        "total_citations": extract_metric("citations"),
-        "h_index": extract_metric("h_index"),
-        "i10_index": extract_metric("i10_index"),
+        "total_citations": 0,
+        "h_index": 0,
+        "i10_index": 0,
     }
+
+    for entry in table:
+        if not isinstance(entry, dict):
+            continue
+
+        # Support both the "name" based response and the condensed single-row variant.
+        possible_keys = {
+            "citations": ["citations"],
+            "h_index": ["h_index"],
+            "i10_index": ["i10_index"],
+        }
+
+        raw_name = entry.get("name")
+        if raw_name:
+            normalized_name = raw_name.strip().lower().replace(" ", "_").replace("-", "_")
+            if normalized_name == "citations":
+                possible_keys["citations"].append(normalized_name)
+            elif normalized_name in ("h_index", "h-index"):
+                possible_keys["h_index"].append(normalized_name)
+            elif normalized_name in ("i10_index", "i10-index"):
+                possible_keys["i10_index"].append(normalized_name)
+
+        for metric, keys in possible_keys.items():
+            for key in keys:
+                # SerpAPI may use hyphenated keys internally.
+                normalized_key = key.replace("_", "-")
+                data = entry.get(key) or entry.get(normalized_key)
+                if data and isinstance(data, dict):
+                    stats_key = "total_citations" if metric == "citations" else metric
+                    stats[stats_key] = max(stats[stats_key], parse_int(data.get("all")))
 
     if not any(stats.values()):
         raise ValueError("SerpAPI response did not contain citation metrics")

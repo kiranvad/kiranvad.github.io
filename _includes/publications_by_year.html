@@ -1,0 +1,38 @@
+{% assign items = include.publications | default: site.data.publications %}
+{% assign sorted_items = items | sort: "year" | reverse %}
+{% assign groups = sorted_items | group_by: "year" %}
+{% assign tab_prefix = include.tab_prefix | default: "publications-" %}
+{% assign tab_group = include.tab_group | default: "publications" %}
+{% assign aria_label = include.aria_label | default: "Publications by year" %}
+{% assign initial_group = groups[0] %}
+
+<div class="tabbed-section"
+     data-tab-group="{{ tab_group }}"
+     data-initial-tab="{{ tab_prefix }}{{ initial_group.name }}">
+  <div class="chrome-tabs" role="tablist" aria-label="{{ aria_label }}">
+    {% for group in groups %}
+      {% assign year = group.name %}
+      <button class="chrome-tab"
+              id="tab-{{ tab_prefix }}{{ year }}"
+              data-tab-target="{{ tab_prefix }}{{ year }}"
+              aria-controls="{{ tab_prefix }}{{ year }}">
+        {{ year }}
+      </button>
+    {% endfor %}
+  </div>
+
+  <div class="chrome-tab-panels">
+    {% for group in groups %}
+      {% assign year = group.name %}
+      <div class="chrome-tab-panel"
+           id="{{ tab_prefix }}{{ year }}"
+           aria-labelledby="tab-{{ tab_prefix }}{{ year }}">
+        <ul class="publication-list">
+          {% for publication in group.items %}
+            {% include publication_item.html publication=publication %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -83,6 +83,7 @@
 /* Tabbed sections shared by publications and talks */
 .tabbed-section {
   margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .chrome-tabs {
@@ -174,6 +175,62 @@
 
 .chrome-tab-panel ul {
   margin: 0;
+}
+
+.publication-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.publication-item + .publication-item {
+  margin-top: 1.75rem;
+}
+
+.publication-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.publication-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.publication-title a:hover {
+  text-decoration: underline;
+}
+
+.publication-journal,
+.publication-authors {
+  margin: 0;
+  color: #4b5563;
+}
+
+.publication-authors {
+  margin-top: 0.25rem;
+}
+
+.publication-notes {
+  margin-top: 0.6rem;
+}
+
+.publication-note {
+  margin: 0;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.badge-link img {
+  height: 24px;
 }
 
 /* Responsive design */
