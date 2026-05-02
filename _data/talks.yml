@@ -1,5 +1,12 @@
 -
   type: invited
+  year: 2026
+  event: "MLXN 2026"
+  location: "Washington, DC"
+  title: "Function Space Data Representations for Self-driving Laboratories"
+
+-
+  type: invited
   year: 2025
   event: "Lila Sciences"
   location: "Boston, MA"

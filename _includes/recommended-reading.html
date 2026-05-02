@@ -1,0 +1,40 @@
+<div class="recommended-reading">
+  <h3>Recommended reading</h3>
+
+  {%- assign picks = page.recommended_reading -%}
+  {%- if picks and picks.size > 0 -%}
+    <ul>
+      {%- for p in picks -%}
+        {%- assign post = site.posts | where: "path", p | first -%}
+        {%- if post -%}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  {%- else -%}
+    {%- assign candidates = "" | split: "" -%}
+    {%- if page.tags -%}
+      {%- for t in page.tags -%}
+        {%- for post in site.posts -%}
+          {%- if post.url != page.url and post.tags contains t -%}
+            {%- unless candidates contains post.url -%}
+              {%- assign candidates = candidates | push: post -%}
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    {%- endif -%}
+
+    {%- assign candidates = candidates | sort: "date" | reverse -%}
+    {%- assign candidates = candidates | uniq -%}
+    {%- if candidates.size > 0 -%}
+      <ul>
+        {%- for c in candidates limit:3 -%}
+          <li><a href="{{ c.url | relative_url }}">{{ c.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p>No recommended posts found.</p>
+    {%- endif -%}
+  {%- endif -%}
+</div>
