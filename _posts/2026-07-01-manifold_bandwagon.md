@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "The Manifold Bandwagon"
-date: 2026-06-01 10:00:00 
+date: 2026-07-01 10:00:00 
 author_profile: true
 tags:
   - manifolds

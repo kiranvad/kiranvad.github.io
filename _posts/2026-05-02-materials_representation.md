@@ -43,9 +43,4 @@ Is it a good PhD thesis topic? Absolutely. Will it make you more employable? Iâ€
 
 To me, that is the biggest pity. We are building the future of science, but weâ€™re still hesitant to tackle its most fundamental challenge: accurately representing the physical world.
 
-
-recommended_reading:
-  - _posts/2026-06-01-gps_functions_boxes.md
-  - _posts/2026-07-01-manifold_bandwagon.md
-
 {% include recommended-reading.html %}
