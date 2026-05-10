@@ -55,5 +55,3 @@ To me, that is the biggest pity. We are building the future of science, but weâ€
 
 {% include bibtex-references.html %}
 {% include bibtex-renderer.html %}
-
-{% include recommended-reading.html %}
