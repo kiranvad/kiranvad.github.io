@@ -1,0 +1,28 @@
+<section class="post__references" aria-labelledby="refs-title">
+  {% if page.references and page.references.size > 0 %}
+    <h3 id="refs-title">References</h3>
+    <ol class="references-list">
+      {% for r in page.references %}
+        {%- assign ref_id = 'ref-' | append: forloop.index -%}
+        <li id="{{ ref_id }}" class="reference-item">
+          {%- if r.citation -%}
+            {{ r.citation }}
+          {%- else -%}
+            {%- assign authors = r.authors | default: '' -%}
+            {%- assign title = r.title | default: '' -%}
+            {%- assign journal = r.journal | default: '' -%}
+            {%- assign year = r.year | default: '' -%}
+            {%- assign doi = r.doi | default: '' -%}
+            {%- assign url = r.url | default: '' -%}
+
+            {%- if authors != '' -%}{{ authors }}. {% endif -%}
+            {%- if title != '' -%}<em>{{ title }}</em>. {% endif -%}
+            {%- if journal != '' -%}{{ journal }}{% if year != '' %}, {{ year }}{% endif %}.{% endif -%}
+            {%- if doi != '' -%} <a href="https://doi.org/{{ doi }}">https://doi.org/{{ doi }}</a>{% elsif url != '' -%} <a href="{{ url }}">{{ url }}</a>{% endif -%}
+          {%- endif -%}
+          <a class="reference-backlink" href="#cite-{{ forloop.index }}">↩︎</a>
+        </li>
+      {% endfor %}
+    </ol>
+  {% endif %}
+</section>

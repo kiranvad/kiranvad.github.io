@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  // Build a citations map from either page.references (legacy) or page.bibtex (BibTeX entries)
+  window.__CITATIONS = {};
+  {%- if page.references -%}
+    {%- for r in page.references -%}
+      {%- assign key = r.key | default: 'r' | append: forloop.index -%}
+      window.__CITATIONS["{{ key }}"] = { index: {{ forloop.index }}, ref_id: "ref-{{ forloop.index }}" };
+    {%- endfor -%}
+  {%- elsif page.bibtex -%}
+    {%- assign idx = 0 -%}
+    {%- for k in page.bibtex -%}
+      {%- assign idx = idx | plus: 1 -%}
+      window.__CITATIONS["{{ k[0] }}"] = { index: {{ idx }}, ref_id: "ref-{{ idx }}" };
+    {%- endfor -%}
+  {%- endif -%}
+</script>

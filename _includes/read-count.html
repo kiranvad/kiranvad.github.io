@@ -1,0 +1,29 @@
+<div class="page__reads" aria-hidden="false">
+  <i class="fa fa-eye" aria-hidden="true"></i>
+  <span id="read-count-value">…</span>
+  <span class="visually-hidden">reads</span>
+</div>
+
+<script>
+  (function(){
+    // Use a stable per-post key by slugifying the page url.
+    // CountAPI namespace/key will be: kiranvad_github_reads/<slug>
+    var slug = "{{ page.url | slugify }}";
+    if (!slug || slug === '') { slug = 'home'; }
+    var namespace = 'kiranvad_github_reads';
+    var url = 'https://api.countapi.xyz/hit/' + namespace + '/' + slug;
+
+    function setValue(v){
+      var el = document.getElementById('read-count-value');
+      if (el) el.textContent = v;
+    }
+
+    // Fetch and increment the counter on first load
+    if (typeof fetch === 'function'){
+      fetch(url)
+        .then(function(res){ return res.json(); })
+        .then(function(data){ if (data && data.value !== undefined) setValue(data.value); })
+        .catch(function(){ /* silently fail */ });
+    }
+  })();
+</script>

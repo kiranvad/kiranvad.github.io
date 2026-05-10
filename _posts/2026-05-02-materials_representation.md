@@ -12,7 +12,17 @@ tags:
   - machine-learning
 categories:
   - Blog
-excerpt: "We favor computational representations of materials over experimental signals like scattering and spectroscopy, widening the sim-to-real gap."
+excerpt: "We favor computational representations of materials while ignoring experimental signals representations like scattering and spectroscopy in ML models, widening the sim-to-real gap."
+bibtex:
+  pauw2023human:
+    title: "The human factor: results of a small-angle scattering data analysis round robin"
+    author: "Pauw, Brian Richard and Smales, Glen Jacob and Anker, Andy S and Annadurai, Venkatasamy and Balazs, Daniel M and Bienert, Ralf and Bouwman, Wim G and Bre\u00dfler, Ingo and Breternitz, Joachim and Brok, Erik S and others"
+    journal: "Applied Crystallography"
+    volume: "56"
+    number: "6"
+    pages: "1618--1629"
+    year: "2023"
+    publisher: "International Union of Crystallography"
 ---
 
 I’ve been sitting on this blog post for a while, but a long-overdue visit to India and a recent career shift have finally given me the headspace to put these thoughts onto paper. In the world of AI for materials science, material representation is the secret sauce. Whether an algorithm succeeds or fails often depends entirely on how we "describe" a material to the machine. Through my recent interviews and interactions with industry leaders, one thing has become clear: everyone agrees that better representations are the key to closing the "sim-to-real" gap—the frustrating distance between a computer’s prediction and what actually happens in a laboratory.
@@ -27,13 +37,13 @@ However, what frustrates me is that we have a massive suite of techniques to "vi
 When I look at the literature, I see a "shiny object" problem. Many researchers take the latest high-profile algorithm from NeurIPS, apply it to a micrograph dataset, and call it progress—often without a clear description of the actual materials problem they are trying to solve. With the rise of complex AI agents, this space is becoming even more siloed and difficult to navigate.
 
 
-Building models that truly understand experimental data isn't "sexy" in the traditional ML sense. It’s mathematically grueling. Take the recent controversy over the A-lab paper and its use of automated XRD labeling—it is an incredibly difficult, almost ill-posed problem.
+ Building models that truly understand experimental data isn't "sexy" in the traditional ML sense. It’s mathematically grueling. Take the recent controversy over the A-lab paper and its use of automated XRD labeling—it is an incredibly difficult, almost ill-posed problem.
 
-In my work with scattering patterns of nanoscale soft matter, I’ve seen these challenges firsthand. To identify a structure, we look at peak positions, shapes, and patterns (peak ratios). But there is a fundamental issue: redundancy.
+ In my work with scattering patterns of nanoscale soft matter, I’ve seen these challenges firsthand. To identify a structure, we look at peak positions, shapes, and patterns (peak ratios). But there is a fundamental issue: redundancy.
 
 Experimental data is filled with redundant information that standard ML algorithms find "unfriendly". Phenomena like "preferential orientation" in XRD can cause missing peaks. In scattering, peaks can span multiple length scales and effectively cancel each other out in the aggregated signal.
 
-This makes it nearly impossible to create the "AlphaFold of Materials" by simply throwing terabytes of data at the problem. In fact, we’re so far from a solution that even human experts often can’t agree on how to describe the same scattering pattern (as seen in the SasFit round-robin study).
+This makes it nearly impossible to create the "AlphaFold of Materials" by simply throwing terabytes of data at the problem. In fact, we’re so far from a solution that even human experts often can’t agree on how to describe the same scattering pattern (as seen in the SasFit round-robin study \cite{pauw2023human}).
 
 I don’t claim to have the silver bullet. But I do know that the current "fashionable" focus on computational-only representation is a mistake.
 
@@ -42,5 +52,8 @@ If you are in a position to guide the next generation of autonomous discovery te
 Is it a good PhD thesis topic? Absolutely. Will it make you more employable? I’m honestly not sure. The industry leaders currently driving the "Self-Driving Lab" revolution seem more interested in closing the loop using simple peak positions—solving problems they already know how to solve without AI.
 
 To me, that is the biggest pity. We are building the future of science, but we’re still hesitant to tackle its most fundamental challenge: accurately representing the physical world.
+
+{% include bibtex-references.html %}
+{% include bibtex-renderer.html %}
 
 {% include recommended-reading.html %}

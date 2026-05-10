@@ -1,0 +1,46 @@
+<script>
+  (function(){
+    if (!window.__CITATIONS) return;
+    function replaceCites(node){
+      if (!node) return;
+      var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null, false);
+      var re = /\\cite\{([^}]+)\}/g;
+      var textNode;
+      var toProcess = [];
+      while(textNode = walker.nextNode()){
+        if (re.test(textNode.nodeValue)){
+          toProcess.push(textNode);
+        }
+        re.lastIndex = 0;
+      }
+      toProcess.forEach(function(tn){
+        var span = document.createElement('span');
+        var parts = tn.nodeValue.split(/(\\cite\{[^}]+\})/g);
+        parts.forEach(function(p){
+          var m = p.match(/^\\cite\{([^}]+)\}$/);
+          if (m){
+            var key = m[1];
+            var meta = window.__CITATIONS[key];
+            if (meta){
+              var a = document.createElement('a');
+              a.href = '#' + meta.ref_id;
+              a.className = 'inline-cite';
+              a.innerHTML = '<sup>['+meta.index+']</sup>';
+              span.appendChild(a);
+            } else {
+              span.appendChild(document.createTextNode(p));
+            }
+          } else {
+            span.appendChild(document.createTextNode(p));
+          }
+        });
+        tn.parentNode.replaceChild(span, tn);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      var content = document.querySelector('.page__content');
+      if (content) replaceCites(content);
+    });
+  })();
+</script>

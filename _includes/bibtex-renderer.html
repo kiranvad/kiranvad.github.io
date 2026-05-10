@@ -1,0 +1,41 @@
+<script>
+  (function(){
+    function parseBibObject(bib){
+      // bib is expected as an object keyed by entry key, values are objects of fields
+      var list = document.getElementById('bib-list');
+      if (!list) return;
+      Object.keys(bib).forEach(function(k, i){
+        var entry = bib[k];
+        var li = document.createElement('li');
+        li.id = 'ref-' + (i+1);
+        // simple formatting: authors. title. journal volume(number): pages (year).
+        var authors = entry.author || '';
+        var title = entry.title || '';
+        var journal = entry.journal || '';
+        var volume = entry.volume || '';
+        var number = entry.number || '';
+        var pages = entry.pages || '';
+        var year = entry.year || '';
+        var out = '';
+        if (authors) out += authors + '. ';
+        if (title) out += '<em>' + title + '</em>. ';
+        if (journal) out += journal;
+        if (volume) out += ', ' + volume;
+        if (number) out += '(' + number + ')';
+        if (pages) out += ': ' + pages;
+        if (year) out += ' (' + year + ')';
+        li.innerHTML = out;
+        list.appendChild(li);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      var dataElem = document.getElementById('bibtex-data');
+      if (!dataElem) return;
+      try{
+        var bib = JSON.parse(dataElem.textContent || '{}');
+        parseBibObject(bib);
+      }catch(e){ console.error('bibtex render error', e); }
+    });
+  })();
+</script>

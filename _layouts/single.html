@@ -57,6 +57,12 @@ layout: default
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
+  {% comment %}<!-- lightweight read-count include -->{% endcomment %}
+  {% include read-count.html %}
+
+  {% include citations-data.html %}
+  {% include cite-renderer.html %}
+
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
