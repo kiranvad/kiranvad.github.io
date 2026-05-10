@@ -1,5 +1,23 @@
 <section class="post__references" id="references" aria-labelledby="refs-title">
   <h3 id="refs-title">References</h3>
-  <ol id="bib-list" class="references-list"></ol>
+  <ol id="bib-list" class="references-list">
+    {%- if page.bibtex -%}
+      {%- assign idx = 0 -%}
+      {%- for pair in page.bibtex -%}
+        {%- assign key = pair[0] -%}
+        {%- assign entry = pair[1] -%}
+        {%- assign idx = idx | plus: 1 -%}
+        <li id="ref-{{ idx }}">
+          {%- if entry.author -%}{{ entry.author }}. {% endif -%}
+          {%- if entry.title -%}<em>{{ entry.title }}</em>. {% endif -%}
+          {%- if entry.journal -%}{{ entry.journal }}{% endif -%}
+          {%- if entry.volume -%}, {{ entry.volume }}{% endif -%}
+          {%- if entry.number -%}({{ entry.number }}){% endif -%}
+          {%- if entry.pages -%}: {{ entry.pages }}{% endif -%}
+          {%- if entry.year -%} ({{ entry.year }}){% endif -%}
+        </li>
+      {%- endfor -%}
+    {%- endif -%}
+  </ol>
   <script type="application/json" id="bibtex-data">{{ page.bibtex | jsonify }}</script>
 </section>

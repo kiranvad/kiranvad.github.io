@@ -8,9 +8,10 @@
     {%- endfor -%}
   {%- elsif page.bibtex -%}
     {%- assign idx = 0 -%}
-    {%- for k in page.bibtex -%}
+    {%- for pair in page.bibtex -%}
+      {%- assign key = pair[0] -%}
       {%- assign idx = idx | plus: 1 -%}
-      window.__CITATIONS["{{ k[0] }}"] = { index: {{ idx }}, ref_id: "ref-{{ idx }}" };
+      window.__CITATIONS["{{ key }}"] = { index: {{ idx }}, ref_id: "ref-{{ idx }}" };
     {%- endfor -%}
   {%- endif -%}
 </script>

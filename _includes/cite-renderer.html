@@ -4,7 +4,8 @@
     function replaceCites(node){
       if (!node) return;
       var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null, false);
-      var re = /\\cite\{([^}]+)\}/g;
+      // Match either "\cite{key}" or "cite{key}" (some Markdown processors strip the backslash)
+      var re = /(?:\\\\cite|cite)\{([^}]+)\}/g;
       var textNode;
       var toProcess = [];
       while(textNode = walker.nextNode()){
@@ -15,9 +16,9 @@
       }
       toProcess.forEach(function(tn){
         var span = document.createElement('span');
-        var parts = tn.nodeValue.split(/(\\cite\{[^}]+\})/g);
+        var parts = tn.nodeValue.split(/((?:\\\\cite|cite)\{[^}]+\})/g);
         parts.forEach(function(p){
-          var m = p.match(/^\\cite\{([^}]+)\}$/);
+          var m = p.match(/^(?:\\\\cite|cite)\{([^}]+)\}$/);
           if (m){
             var key = m[1];
             var meta = window.__CITATIONS[key];
