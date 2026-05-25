@@ -1,11 +1,11 @@
 -
   year: 2025
   title: "Autonomous Phase Mapping of Gold Nanoparticles Synthesis with Differentiable Models of Spectral Shape"
-  link: "https://chemrxiv.org/engage/chemrxiv/article-details/67930f56fa469535b99a0dd1"
+  link: "https://www.nature.com/articles/s41524-025-01822-z"
   journal: "npj Computational Materials (accepted, October 2, 2025)"
   authors: "Vaddi, Kiran; Chiang, Huat Thart; Pozzo, Lilo D."
-  notes:
-    - "Accepted to appear in <em>npj Computational Materials</em> (October 2, 2025)"
+  arxiv: 
+    - "https://chemrxiv.org/engage/chemrxiv/article-details/67930f56fa469535b99a0dd1"
   code:
     - "https://github.com/pozzo-research-group/activephasemap"
   data:
@@ -19,6 +19,8 @@
   authors: "Chiang, Huat Thart; Zhang, Zhiyin; Vaddi, Kiran; Tezcan, F. Akif; Pozzo, Lilo D."
   code:
     - "https://github.com/pozzo-research-group/MC-DFM"
+  arxiv: 
+    - "https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-68833"
 
 -
   year: 2024
@@ -30,6 +32,8 @@
     - "https://github.com/pozzo-research-group/papers/tree/main/Silver%20Nanoplates"
   data:
     - "https://github.com/pozzo-research-group/papers/tree/main/pluronic-phasemaps"
+  arxiv: 
+    - "https://chemrxiv.org/doi/10.26434/chemrxiv-2024-s2w98"
 
 -
   year: 2024
@@ -39,6 +43,8 @@
   authors: "Chiang, Huat Thart; Vaddi, Kiran; Pozzo, Lilo D."
   code:
     - "https://github.com/pozzo-research-group/autophasemap"
+  arxiv:
+    - "https://chemrxiv.org/doi/10.26434/chemrxiv-2023-60kd6"
 
 -
   year: 2023
@@ -50,6 +56,8 @@
     - "RSC Digital Discovery’s Editor Choice Article"
   data:
     - "https://github.com/pozzo-research-group/papers/tree/main/qdots"
+  arxiv:
+    - "https://chemrxiv.org/doi/full/10.26434/chemrxiv-2023-20wr2"
 
 -
   year: 2023
@@ -61,6 +69,8 @@
     - "https://github.com/pozzo-research-group/autophasemap"
   data:
     - "https://github.com/pozzo-research-group/papers/tree/main/autophasemap"
+  arxiv:
+    - "https://chemrxiv.org/doi/full/10.26434/chemrxiv-2022-3p4gx-v2"
 
 -
   year: 2023
@@ -80,10 +90,12 @@
   notes:
     - "RSC Digital Discovery’s Editor Choice Article"
     - "Introduces Amplitude-Phase Distance for spectral shape measurements"
-  code:
+  data:
     - "https://github.com/pozzo-research-group/HEAD/tree/BO"
+  code:
     - "https://github.com/kiranvad/Amplitude-Phase-Distance"
-
+  arxiv:
+    - "https://chemrxiv.org/doi/full/10.26434/chemrxiv-2022-dmn8w"
 -
   year: 2022
   title: "Multivariate analysis of peptide-driven nucleation and growth of Au nanoparticles"
@@ -94,6 +106,8 @@
     - "https://gist.github.com/kiranvad/a46af46cbb3a114b4ab2b1970ba9cfa5"
   data:
     - "https://zenodo.org/record/6588769"
+  arxiv:
+    - "https://chemrxiv.org/doi/full/10.26434/chemrxiv-2022-jnhdn"
 
 -
   year: 2022
@@ -103,6 +117,8 @@
   authors: "Vaddi, Kiran; Wodo, Olga"
   code:
     - "https://github.com/kiranvad/GPCV"
+  arxiv:
+    - "https://pdfs.semanticscholar.org/8fc8/0f9d0804703379c5a08ac33b568f73c6137f.pdfx"
 
 -
   year: 2021

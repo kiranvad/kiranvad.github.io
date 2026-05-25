@@ -66,6 +66,14 @@
           </a>
         {% endfor %}
       {% endif %}
+      {% assign arxiv_link = pub.arxiv %}
+        {% if arxiv_link %}
+          <a class="badge-link" href="{{ arxiv_link }}" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/badge/arXiv-Preprint-orange?logo=arxiv" alt="arXiv preprint">
+          </a>
+        {% endif %}
+        </div>
+      {% endif %}
     </div>
   {% endif %}
 </li>
