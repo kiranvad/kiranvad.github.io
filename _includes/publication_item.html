@@ -1,6 +1,7 @@
 {% assign pub = include.publication %}
 {% assign code_links = pub.code | default: empty %}
 {% assign data_links = pub.data | default: empty %}
+{% assign arxiv_links = pub.arxiv | default: empty %}
 {% assign notes = pub.notes | default: empty %}
 
 <li class="publication-item">
@@ -30,7 +31,7 @@
     </div>
   {% endif %}
 
-  {% if code_links or data_links %}
+  {% if code_links or data_links or arxiv_links %}
     <div class="publication-links">
       {% if code_links %}
         {% assign codes = code_links | arrayify %}
@@ -66,13 +67,13 @@
           </a>
         {% endfor %}
       {% endif %}
-      {% assign arxiv_link = pub.arxiv %}
-        {% if arxiv_link %}
-          <a class="badge-link" href="{{ arxiv_link }}" target="_blank" rel="noopener">
+      {% if arxiv_links %}
+        {% assign arxiv_items = arxiv_links | arrayify %}
+        {% for url in arxiv_items %}
+          <a class="badge-link" href="{{ url }}" target="_blank" rel="noopener">
             <img src="https://img.shields.io/badge/arXiv-Preprint-orange?logo=arxiv" alt="arXiv preprint">
           </a>
-        {% endif %}
-        </div>
+        {% endfor %}
       {% endif %}
     </div>
   {% endif %}
