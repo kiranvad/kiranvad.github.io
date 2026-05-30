@@ -24,6 +24,7 @@
   year: 2025
   event: "Colorado State University"
   location: "Department of Chemical and Biological Engineering"
+  title: "Functional Data Analysis Tools for Accelerated Materials Design"
 
 -
   type: invited
@@ -64,8 +65,21 @@
 
 -
   type: contributed
+  year: 2026
+  event: "AI4X Accelerate Conference"
+  title: "Autonomous Experiments in Infinite Dimensions: A Case Study in Phase Mapping of Biofomrulation Stability"
+
+-
+  type: contributed
+  year: 2026
+  event: "GRC AI for Materials, Energy, and Chemical Sciences"
+  title: "Beyond Point Sampling: Autonomous Phase Mapping of Biologic Formulation Stability via Hierarchical and Manifold Active Learning"
+
+-
+  type: contributed
   year: 2025
   event: "American Physical Society March Meeting"
+  title: "Differentiable Phase Mapping for Autonomously Engineering Soft Matter"
 
 -
   type: contributed
@@ -89,6 +103,7 @@
   type: contributed
   year: 2024
   event: "Materials Research Society Spring Meeting"
+  title: "Understanding Design Rules of Colloidal Self-Assembly Using Autonomous Phase Mapping"
 
 -
   type: contributed
