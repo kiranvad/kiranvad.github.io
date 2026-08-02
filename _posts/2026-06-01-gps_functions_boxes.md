@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Gausiann Process Are a (giant) Box of Functions"
-date: 2026-06-01 10:00:00 
+date: 2026-08-02 10:00:00 
 author_profile: true
 tags:
   - materials
@@ -65,11 +65,11 @@ One of the most unfair criticisms—or perhaps misunderstandings—of GPs in mat
 
 By definition, the uncertainty produced by a GP is primarily uncertainty about the **function you are trying to infer from your input–output observations**.
 
-It is not automatically the uncertainty associated with the **measurement process itself**.
+It is not automatically the uncertainty associated with the **data collection process itself**.
 
 Those are different things.
 
-Suppose I measure the phase behavior of a material and obtain an observation (y) at some experimental condition (x). There may be uncertainty because I do not know the underlying function that maps (x) to (y). But there may also be uncertainty because my instrument is noisy, my sample preparation is imperfect, or the experiment itself has stochastic variability.
+Suppose I measure the phase behavior of a material and obtain an observation ($y$) at some experimental condition ($x$). There may be uncertainty because I do not know the underlying function that maps $x$ to $y$. But there may also be uncertainty because my instrument is noisy, my sample preparation is imperfect, or the experiment itself has stochastic variability.
 
 The GP's **likelihood** provides a way to model this [observation noise](https://github.com/cornellius-gp/gpytorch/tree/main/gpytorch/likelihoods). The kernel, in contrast, primarily describes assumptions about the correlations and smoothness of the underlying function.
 
@@ -87,7 +87,7 @@ There is also an important practical complication. Many of the convenient analyt
 
 So the next time you fit a GP and find yourself endlessly playing around with kernels, do yourself a favor:
 
-**Plot samples from the distribution over functions defined by your mean and kernel.**
+_Plot samples from the distribution over functions defined by your mean and kernel._
 
 Take a peek inside the box.
 
