@@ -1,20 +1,20 @@
 ---
 permalink: /
 title: "Kiran Vaddi, Ph.D."
-excerpt: "A postdoctoral researcher at UW Seattle"
+excerpt: "Materials Scientist"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-I am a [Foreign Guest Researcher](https://www.nist.gov/people/kiran-vaddi) at the National Institute of Standards and Technology working on the [Autonomous Formulation Project](https://www.nist.gov/ncnr/ncnr-facility-upgrades/autonomous-formulation-lab-afl).
+I am a [Guest Researcher](https://www.nist.gov/people/kiran-vaddi) at the National Institute of Standards and Technology where I lead the developement of [Autonomous Formulation Project](https://www.nist.gov/programs-projects/autonomous-formulation-lab).
 Previously, I was a Postdoctoral Scholar in the [Department of Chemical Engineering](https://www.cheme.washington.edu/) at the University of Washington, Seattle, and a [UW Data Science Postdoctoral Fellow](https://escience.washington.edu/member/kiran-vaddi/) affiliated with the [eScience Institute](https://escience.washington.edu/). As part of my involvement with the data science community, I co-chaired the eScience Institute’s weekly postdoc seminar series (2021–2022).
 
 My research lies at the intersection of **machine learning** and **materials science**, with a focus on building autonomous experimentation workflows for materials discovery and design. Broadly, I develop models and representations that bridge physical insight and data-driven methods to accelerate the discovery of soft materials and nanostructures. My Ph.D. in Materials Science and Engineering (University at Buffalo, SUNY) focused on developing physics-based and data-driven models for material optimization and structure–property mapping. I received my bachelor’s and master’s degrees in Mechanical Engineering from the [Indian Institute of Technology Madras](https://www.iitm.ac.in/), with a specialization in thermal engineering.
 
 
-My research and contributions to the autonomous material discovery community has been recognized with [APS DSOFT Futute Investigator Award (2025)](https://engage.aps.org/dsoft/news-events/future-investigator-travel-award), [Outstanding Reviwers Award from RSC Digital Disocvery (2023)](https://pubs.rsc.org/en/content/articlehtml/2024/dd/d4dd90037e), and an [invited panel from Kavli Foundation (2023)](https://mrs.digitellinc.com/p/s/meet-the-robots-how-to-build-a-self-driving-laboratory-symposium-x-mrsthe-kavli-foundation-frontiers-of-materials-replay-47551)
+My research and contributions to the autonomous material discovery community has been recognized with [AI4Materials rising star](https://ai4x.cc/2026/ai4x-rising-star-winners/), [APS DSOFT Futute Investigator Award (2025)](https://engage.aps.org/dsoft/news-events/future-investigator-travel-award), [Outstanding Reviwers Award from RSC Digital Disocvery (2023)](https://pubs.rsc.org/en/content/articlehtml/2024/dd/d4dd90037e), and an [invited panel from Kavli Foundation (2023)](https://mrs.digitellinc.com/p/s/meet-the-robots-how-to-build-a-self-driving-laboratory-symposium-x-mrsthe-kavli-foundation-frontiers-of-materials-replay-47551)
 
 ### Research Interests
 
